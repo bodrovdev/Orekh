@@ -1,5 +1,14 @@
+@use "../mixins";
+
 .base-container {
 	width: 90%;
 
 	margin: 0 auto;
+}
+
+@media(min-width: '1600px') {
+	.base-container {
+		width: 67.5%;
+		max-width: 1296px;
+	}
 }
