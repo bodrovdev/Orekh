@@ -7,7 +7,15 @@ let navLinks = document.querySelectorAll('.main-nav__mobile-link');
 
 burger.addEventListener('click', () => {
   burger.classList.toggle('main-nav__burger--active');
-  mobileMenu.classList.toggle('main-nav__mobile-menu--active');
+
+  if (mobileMenu.classList.contains('main-nav__mobile-menu--active')) {
+    mobileMenu.classList.remove('main-nav__mobile-menu--active');
+    mobileMenu.classList.add('main-nav__mobile-menu--closing');
+  }
+  else {
+    mobileMenu.classList.remove('main-nav__mobile-menu--closing');
+    mobileMenu.classList.add('main-nav__mobile-menu--active');
+  }
 
   if (burger.classList.contains('main-nav__burger--active')) {
     disableBodyScroll(mobileMenu);
@@ -21,6 +29,8 @@ navLinks.forEach((element) => {
   element.addEventListener('click', () => {
     if (mobileMenu.classList.contains('main-nav__mobile-menu--active')) {
       mobileMenu.classList.remove('main-nav__mobile-menu--active');
+      mobileMenu.classList.add('main-nav__mobile-menu--closing');
+
       burger.classList.remove('main-nav__burger--active');
       enableBodyScroll(mobileMenu);
     }

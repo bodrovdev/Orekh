@@ -1,3 +1,5 @@
+@use "../mixins";
+
 .heading {
   width: 100%;
   min-height: 600px;
@@ -5,5 +7,9 @@
   background-size: contain;
   background-repeat: no-repeat;
 
-  margin-top: 120px;
+  margin: 120px 0 0 0;
+
+  @include mixins.respond-to(mobileOnly) {
+    margin: 85px 0 0 0;
+  }
 }
