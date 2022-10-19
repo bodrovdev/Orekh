@@ -1,5 +1,6 @@
 //Для разработки
 @use 'global/variables';
+@use 'global/visually-hidden';
 
 //Миксины
 @use 'mixins/font-face';
@@ -24,3 +25,4 @@
 @use 'blocks/page-footer';
 @use 'blocks/main-nav';
 @use 'blocks/heading';
+@use 'blocks/main-button';@use 'blocks/inside';

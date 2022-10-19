@@ -152,7 +152,7 @@
     @include mixins.respond-to(mobileOnly) {
       width: 100%;
 
-      margin: 0 0 15px 0;
+      margin: 0 0 20px 0;
     }
   }
 
@@ -163,12 +163,13 @@
       display: flex;
 
       width: 100%;
+
+      margin: 0 0 20px 0;
     }
   }
 
   &__mobile-item--main {
     display: inline-block;
-    width: 100%;
 
     margin: 0 35px 0 0;
 
@@ -177,7 +178,19 @@
     }
 
     @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+
       margin: 0 0 10px 0;
+    }
+  }
+
+  &__mobile-item--second {
+    @include mixins.respond-to(mobileOnly) {
+      display: inline-block;
+
+      width: 100%;
+
+      margin: 0 0 5px 0;
     }
   }
 
@@ -193,14 +206,25 @@
 
     transition: 0.3s;
 
-    &:hover {
-      color: var(--color-flush-orange);
+    @include mixins.respond-to(tablet) {
+      &:hover {
+        color: var(--color-flush-orange);
+      }
     }
 
     @include mixins.respond-to(mobileOnly) {
       font-size: 20px;
       line-height: 130%;
-      color: var(--color-black);
+      color: var(--color-white);
+    }
+  }
+
+  &__mobile-link--second {
+    @include mixins.respond-to(mobileOnly) {
+      font-size: 17px;
+      line-height: 130%;
+      color: var(--color-white);
+      opacity: 0.8;
     }
   }
 
@@ -230,29 +254,23 @@
       font-size: 20px;
       font-weight: 500;
       line-height: 130%;
-      color: var(--color-black);
+      color: var(--color-white);
 
       &::after {
         display: none;
-      }
-
-      &::before {
-        content: "";
-        position: absolute;
-        top: 55%;
-        transform: translateY(-50%);
-        left: -12px;
-
-        width: 8px;
-        height: 8px;
-        background-color: var(--color-shark);
-        border-radius: 50%;
       }
     }
   }
 
   &__info-block {
     display: flex;
+
+    @include mixins.respond-to(mobileOnly) {
+      align-items: center;
+      justify-content: space-between;
+
+      width: 90%;
+    }
   }
 
   &__phone {
@@ -276,6 +294,10 @@
   &__phone-icon,
   .main-nav__time-icon {
     margin: 0 5px 0 0;
+
+    @include mixins.respond-to(mobileOnly) {
+      filter: brightness(0) saturate(100%) invert(0%) sepia(9%) saturate(7463%) hue-rotate(353deg) brightness(91%) contrast(96%);
+    }
   }
 
   &__phone-text,
@@ -284,6 +306,10 @@
     font-size: 12px;
     line-height: 15px;
     color: var(--color-flush-orange);
+
+    @include mixins.respond-to(mobileOnly) {
+      color: var(--color-white);
+    }
   }
 
   &__time {

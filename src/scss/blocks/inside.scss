@@ -1,0 +1,52 @@
+@use "../mixins";
+
+.inside {
+  background-color: var(--color-white);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    color: var(--color-shark);
+
+    margin: 0 0 30px 0;
+  }
+
+  &__floors-container {
+    display: flex;
+  }
+
+  &__floor {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 250px;
+    min-height: 370px;
+    background: linear-gradient(159.8deg, rgba(255, 226, 89, 0.09) 9.03%, rgba(240, 168, 168, 0.103021) 70.13%, rgba(255, 167, 81, 0.11) 102.88%);
+    border-radius: 17px;
+
+    padding: 20px 0 20px 15px;
+    margin: 0 15px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__floor-title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+
+    background: linear-gradient(307.08deg, #FDC830 -18.38%, #F37335 58.97%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}
