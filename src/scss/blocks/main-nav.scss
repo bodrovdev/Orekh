@@ -4,7 +4,7 @@
   &__top {
     position: relative;
 
-    padding: 25px 0 10px 0;
+    padding: 7px 0 10px 0;
     margin: 0 0 20px 0;
 
     &::after {
@@ -56,9 +56,12 @@
 
     width: 100%;
 
+    padding: 15px 0 0 20px;
+
     @include mixins.respond-to(mobileOnly) {
       position: fixed;
       top: 85px;
+      left: -100%;
 
       display: flex;
       align-items: center;
@@ -67,7 +70,7 @@
       height: calc(100% - 85px);
       background-color: var(--color-flush-orange);
 
-      transform: translateX(-110%);
+      transition: left .5s cubic-bezier(.79, .14, .15, .86);
 
       z-index: 10;
     }
@@ -80,45 +83,7 @@
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-y: contain;
 
-    animation-name: mobile-menu-active;
-    animation-duration: 800ms;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
-  }
-
-  &__mobile-menu--closing {
-    animation-name: mobile-menu-default;
-    animation-duration: 800ms;
-    animation-timing-function: ease-in-out;
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes mobile-menu-default {
-    0% {
-      transform: translateX(-5%);
-    }
-
-    100% {
-      transform: translateX(-110%);
-    }
-  }
-
-  @keyframes mobile-menu-active {
-    0% {
-      transform: translateX(-110%);
-    }
-
-    60% {
-      transform: translateX(0);
-    }
-
-    70% {
-      transform: translateX(-15%);
-    }
-
-    100% {
-      transform: translateX(0);
-    }
+    transition: left .5s cubic-bezier(.79, .14, .15, .86);
   }
 
   &__mobile-inner {
@@ -224,7 +189,7 @@
       font-size: 17px;
       line-height: 130%;
       color: var(--color-white);
-      opacity: 0.8;
+      opacity: 0.9;
     }
   }
 
@@ -239,7 +204,7 @@
     &::after {
       content: "";
       position: absolute;
-      bottom: -18px;
+      bottom: -25px;
       left: 0;
 
       width: 100%;
@@ -296,7 +261,16 @@
     margin: 0 5px 0 0;
 
     @include mixins.respond-to(mobileOnly) {
-      filter: brightness(0) saturate(100%) invert(0%) sepia(9%) saturate(7463%) hue-rotate(353deg) brightness(91%) contrast(96%);
+      width: 15px;
+      height: 15px;
+
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &__phone-icon {
+    @include mixins.respond-to(mobileOnly) {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(13%) hue-rotate(81deg) brightness(106%) contrast(106%);
     }
   }
 
@@ -315,6 +289,12 @@
   &__time {
     user-select: none;
     pointer-events: none;
+  }
+
+  &__time-icon {
+    @include mixins.respond-to(mobileOnly) {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(13%) hue-rotate(81deg) brightness(106%) contrast(106%);
+    }
   }
 
   &__burger {

@@ -21,7 +21,6 @@
     align-items: center;
     justify-content: flex-start;
 
-    width: 100%;
     height: 100%;
   }
 
@@ -43,5 +42,10 @@
     color: var(--color-shark);
 
     margin: 0 0 70px 0;
+
+    @include mixins.respond-to(mobileOnly) {
+      font-size: 30px;
+      line-height: 130%;
+    }
   }
 }

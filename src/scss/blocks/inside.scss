@@ -19,6 +19,10 @@
 
   &__floors-container {
     display: flex;
+
+    @include mixins.respond-to(mobileOnly) {
+      flex-direction: column;
+    }
   }
 
   &__floor {
