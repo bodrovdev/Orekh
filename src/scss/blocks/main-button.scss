@@ -6,10 +6,11 @@
   justify-content: center;
 
   height: 50px;
-  background-color: var(--color-flush-orange);
+  background: linear-gradient(90deg, #854E2C 0%, #AB4B10 100%);
   border-radius: 46px;
   cursor: pointer;
 
+  font-family: var(--font-family-default);
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
@@ -19,20 +20,8 @@
 
   padding: 16px 40px 16px 40px;
 
-  &:hover {
-    background-color: var(--color-clementine);
-
-    transition: all 0.1s;
-  }
-
-  &:active {
-    background-color: var(--color-tenn);
-
-    transition: all 0.1s;
-  }
-
   &:focus-visible {
-    outline: solid var(--color-flush-orange);
+    outline: 5px solid var(--color-flush-orange);
     outline-offset: 5px;
 
     transition: all 0.1s;
