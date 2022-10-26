@@ -64,7 +64,7 @@
 
       width: 100%;
       height: calc(100% - 85px);
-      background-color: var(--color-flush-orange);
+      background: var(--gradient-main);
 
       transition: left .5s cubic-bezier(.79, .14, .15, .86);
 
@@ -126,7 +126,8 @@
 
         width: 90%;
         height: 1px;
-        background-color: var(--color-clementine);
+        background-color: var(--color-shark);
+        opacity: 0.5;
       }
     }
   }
@@ -152,7 +153,8 @@
 
         width: 90%;
         height: 1px;
-        background-color: var(--color-clementine);
+        background-color: var(--color-shark);
+        opacity: 0.5;
       }
     }
   }
@@ -193,7 +195,7 @@
     transition: color, outline, outline-offset 0.1s;
 
     &:hover {
-      color: var(--color-flush-orange);
+      color: var(--color-fiery-orange);
 
       transition: color 0.3s;
     }
@@ -237,7 +239,6 @@
     font-size: 12px;
     line-height: 15px;
 
-    // background: -webkit-linear-gradient(90deg, #854E2C 0%, #AB4B10 100%);
     background: var(--gradient-main);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -273,8 +274,8 @@
         transform: translateY(-50%);
         left: -15px;
 
-        width: 10px;
-        height: 10px;
+        width: 5px;
+        height: 5px;
         background-color: var(--color-white);
         border-radius: 50%;
       }
@@ -327,6 +328,8 @@
   .main-nav__time-icon {
     margin: 0 5px 0 0;
 
+    fill: var(--color-nutmeg);
+
     @include mixins.respond-to(mobileOnly) {
       width: 15px;
       height: 15px;
@@ -335,15 +338,15 @@
     }
   }
 
-  // &__phone-icon {
-  //   @include mixins.respond-to(mobileOnly) {
-  //     filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(13%) hue-rotate(81deg) brightness(106%) contrast(106%);
-  //   }
-  // }
+  &__phone-icon {
+    @include mixins.respond-to(mobileOnly) {
+      filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(13%) hue-rotate(81deg) brightness(106%) contrast(106%);
+    }
+  }
 
   &__phone-text,
   .main-nav__time-text {
-    background: -webkit-linear-gradient(90deg, #854E2C 0%, #AB4B10 100%);
+    background: var(--gradient-main);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -414,6 +417,8 @@
 
   &__bottom {
     display: block;
+
+    overflow: hidden;
 
     @include mixins.respond-to(mobileOnly) {
       display: none;
@@ -498,10 +503,39 @@
   }
 
   &__search-field {
+    min-width: 250px;
     outline: none;
     border: 1px solid var(--color-flush-orange);
     border-radius: 42px;
 
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: var(--color-shark);
+
+    transform: translateY(100%);
+    transition: transform 0.3s;
+
     padding: 6px 10px 6px 10px;
+    margin: 0 10px 0 0;
+  }
+
+  &__search-field--active {
+    transform: translateY(0);
+
+    transition: transform 0.3s;
+  }
+
+  &__search-button {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+
+    padding: 4px;
+
+    &:hover {
+      box-shadow: 0 0 0 2px var(--color-flush-orange);
+      border-radius: 50%;
+    }
   }
 }

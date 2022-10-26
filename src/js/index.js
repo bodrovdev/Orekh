@@ -36,3 +36,11 @@ navLinks.forEach((element) => {
     }
   })
 })
+
+//Показ строки поиска
+let search_button = document.getElementById('search_button');
+let search_field = document.getElementById('search_field');
+
+search_button.addEventListener('click', () => {
+  search_field.classList.toggle('main-nav__search-field--active');
+})
