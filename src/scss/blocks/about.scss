@@ -10,10 +10,52 @@
         url("../img/image/design/about-cover@2x.webp") 2x);
   }
 
+  background-size: cover;
+  background-position: center;
+
+  &__container {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+
+    padding: 115px 0 105px 0;
+  }
+
+  &__column {
+    margin: 0 56px 0 0;
+  }
+
   &__column-img {
     @include mixins.respond-to(mobileOnly) {
       width: 100%;
       height: auto;
+    }
+  }
+
+  &__column--right {
+    display: flex;
+    flex-direction: column;
+
+    & h2 {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 49px;
+      color: var(--color-shark);
+
+      padding: 0;
+      margin: 0 0 35px 0;
+    }
+
+    & p {
+      max-width: 530px;
+
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 130%;
+      color: var(--color-shark);
+
+      padding: 0;
+      margin: 0 0 70px 0;
     }
   }
 }

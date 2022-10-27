@@ -1,0 +1,126 @@
+@use "../mixins";
+
+.blog {
+
+  &__container {
+    padding: 80px 0 80px 0;
+  }
+
+  &__tabs {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__tabs-button {
+    position: relative;
+
+    cursor: pointer;
+    user-select: none;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--color-boulder);
+
+    transition: color 0.1s;
+
+    padding: 0 0 4px 0;
+    margin: 0 35px 23px 0;
+
+    &:last-of-type {
+      margin: 0 0 23px 0;
+    }
+
+    &:hover {
+      color: var(--color-shark);
+
+      transition: color 0.1s;
+    }
+  }
+
+  &__radio-hidden:checked+.blog__tabs-button {
+    font-weight: 600;
+    color: var(--color-shark);
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-flush-orange);
+    }
+  }
+
+  &__news-link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--color-hawaiian-tan);
+
+    margin: 0 0 0 auto;
+  }
+
+  &__tabs-body {
+    display: flex;
+
+    width: 100%;
+  }
+
+  &__tabs-item {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+
+    width: 100%;
+  }
+
+  &__tabs-subitem {
+    width: 416px;
+    min-height: 510px;
+  }
+
+  &__subitem-image {
+    margin: 0 0 10px 0;
+  }
+
+  &__subitem-date {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--color-boulder);
+
+    margin: 0 0 30px 0;
+  }
+
+  &__subitem-source {
+    display: inline-block;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 130%;
+
+    text-transform: uppercase;
+    color: var(--color-flush-orange);
+
+    margin: 0 0 17px 0;
+  }
+
+  &__subitem-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 130%;
+    color: var(--color-shark);
+
+    margin: 0 0 15px 0;
+  }
+
+  &__subitem-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--color-boulder);
+  }
+}

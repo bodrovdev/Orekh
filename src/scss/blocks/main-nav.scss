@@ -288,6 +288,7 @@
 
   &__info-block {
     display: flex;
+    align-items: flex-end;
 
     @include mixins.respond-to(mobileOnly) {
       align-items: center;
@@ -318,6 +319,16 @@
     }
   }
 
+  &__phone {
+    &:hover {
+      background: var(--color-fiery-orange);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      transition: background 0.3s;
+    }
+  }
+
   &__phone,
   .main-nav__time {
     display: flex;
@@ -326,21 +337,16 @@
 
   &__phone-icon,
   .main-nav__time-icon {
-    margin: 0 5px 0 0;
+    filter: invert(30%) sepia(57%) saturate(601%) hue-rotate(340deg) brightness(95%) contrast(84%);
 
-    fill: var(--color-nutmeg);
+    margin: 0 5px 0 0;
 
     @include mixins.respond-to(mobileOnly) {
       width: 15px;
       height: 15px;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(13%) hue-rotate(81deg) brightness(106%) contrast(106%);
 
       margin: 0 5px 0 0;
-    }
-  }
-
-  &__phone-icon {
-    @include mixins.respond-to(mobileOnly) {
-      filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(13%) hue-rotate(81deg) brightness(106%) contrast(106%);
     }
   }
 
@@ -369,12 +375,6 @@
   &__time {
     user-select: none;
     pointer-events: none;
-  }
-
-  &__time-icon {
-    @include mixins.respond-to(mobileOnly) {
-      filter: brightness(0) saturate(100%) invert(100%) sepia(3%) saturate(13%) hue-rotate(81deg) brightness(106%) contrast(106%);
-    }
   }
 
   &__burger {
@@ -497,45 +497,7 @@
     }
   }
 
-  &__search-block {
-    display: flex;
-    align-items: center;
-  }
-
   &__search-field {
-    min-width: 250px;
-    outline: none;
-    border: 1px solid var(--color-flush-orange);
-    border-radius: 42px;
-
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
-    color: var(--color-shark);
-
-    transform: translateY(100%);
-    transition: transform 0.3s;
-
-    padding: 6px 10px 6px 10px;
-    margin: 0 10px 0 0;
-  }
-
-  &__search-field--active {
-    transform: translateY(0);
-
-    transition: transform 0.3s;
-  }
-
-  &__search-button {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-
-    padding: 4px;
-
-    &:hover {
-      box-shadow: 0 0 0 2px var(--color-flush-orange);
-      border-radius: 50%;
-    }
+    display: none;
   }
 }
