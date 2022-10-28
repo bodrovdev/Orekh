@@ -1,0 +1,18 @@
+@use "../mixins";
+
+.underline {
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
+
+  margin: auto 0 0 0;
+
+  & span,
+  a {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--color-white);
+  }
+}
