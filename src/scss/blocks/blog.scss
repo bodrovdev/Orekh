@@ -65,6 +65,10 @@
 
     margin: 0 0 0 auto;
 
+    @include mixins.respond-to(mobileOnly) {
+      margin: 0 auto 30px 0;
+    }
+
     &:hover {}
   }
 
@@ -79,6 +83,10 @@
     align-items: stretch;
 
     width: 100%;
+
+    @include mixins.respond-to(mobileOnly) {
+      flex-direction: column;
+    }
   }
 
   #blog_tabs_radio_1:checked~.blog__tabs-body .blog__tabs-item--1 {
@@ -110,10 +118,22 @@
     &:last-child {
       margin: 0;
     }
+
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+    }
   }
 
   &__subitem-image {
     margin: 0 0 10px 0;
+  }
+
+  &__subitem-img {
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
   }
 
   &__subitem-date {

@@ -1,6 +1,8 @@
 @use "../mixins";
 
 .underline {
+  position: relative;
+
   display: flex;
   justify-content: space-between;
 
@@ -8,11 +10,40 @@
 
   margin: auto 0 0 0;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -5%;
+
+    display: none;
+
+    width: 110%;
+    height: 1px;
+    background-color: var(--color-boulder);
+  }
+
+  @include mixins.respond-to(mobileOnly) {
+    flex-direction: column;
+
+    &::before {
+      display: block;
+    }
+  }
+
   & span,
   a {
     font-weight: 400;
     font-size: 14px;
     line-height: 130%;
     color: var(--color-white);
+
+    @include mixins.respond-to(mobileOnly) {
+      margin: 0 0 20px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
   }
 }
