@@ -1,11 +1,9 @@
-// import Swiper from 'swiper/bundle';
+import Swiper from 'swiper/bundle';
 
-// let floorsSwiper = new Swiper('.inside__test-slider', {
-//   slidesPerView: 1,
-//   loop: true,
-//   spaceBetween: 5,
-//   direction: 'horizontal',
-// });
+let floorsSwiper = new Swiper('.test', {
+  slidesPerView: 1,
+  direction: 'horizontal',
+});
 
 // let floorsSwiper = Swiper;
 // let init = false;
