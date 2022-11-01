@@ -1,10 +1,5 @@
 import Swiper from 'swiper/bundle';
 
-let floorsSwiper = new Swiper('.test', {
-  slidesPerView: 1,
-  direction: 'horizontal',
-});
-
 // let floorsSwiper = Swiper;
 // let init = false;
 

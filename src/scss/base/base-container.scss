@@ -6,9 +6,15 @@
 	margin: 0 auto;
 }
 
-@media(min-width: '1600px') {
+@media(min-width: '1300px') {
 	.base-container {
-		width: 67.5%;
+		width: 100%;
 		max-width: 1296px;
+	}
+}
+
+@media only screen and (min-device-width: 1300px) and (max-device-width: 1365px) {
+	.base-container {
+		padding: 0 5% 0 5%;
 	}
 }

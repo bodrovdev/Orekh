@@ -28,8 +28,12 @@
     align-items: flex-end;
     flex-wrap: nowrap;
 
-    @include mixins.respond-to(tabletOnly) {
+    @include mixins.respond-to(tablet) {
       align-items: center;
+    }
+
+    @include mixins.respond-to(desktopM) {
+      align-items: flex-end;
     }
   }
 
@@ -60,18 +64,24 @@
   }
 
   &__column-img {
+    height: auto;
     vertical-align: top;
 
     @include mixins.respond-to(mobileOnly) {
       width: 100%;
-      height: auto;
     }
 
     @include mixins.respond-to(tabletOnly) {
       width: 320px;
-      height: auto;
     }
 
+    @include mixins.respond-to(desktopS) {
+      width: 480px;
+    }
+
+    @include mixins.respond-to(desktopM) {
+      width: 603px;
+    }
   }
 
   &__column--right {

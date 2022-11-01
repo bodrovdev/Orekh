@@ -117,6 +117,10 @@
     @include mixins.respond-to(tabletOnly) {
       overflow-x: scroll;
     }
+
+    @include mixins.respond-to(desktopS) {
+      justify-content: space-between;
+    }
   }
 
   #blog_tabs_radio_1:checked~.blog__tabs-body .blog__tabs-item--1 {
@@ -171,10 +175,26 @@
   }
 
   &__subitem-img {
+    vertical-align: top;
+
     @include mixins.respond-to(mobileOnly) {
       width: 100%;
       height: auto;
       object-fit: cover;
+    }
+
+    @include mixins.respond-to(tablet) {
+      width: 320px;
+      height: auto;
+    }
+
+    @include mixins.respond-to(desktopS) {
+      width: 280px;
+    }
+
+    @include mixins.respond-to(desktopM) {
+      width: 416px;
+      height: 250px;
     }
   }
 
