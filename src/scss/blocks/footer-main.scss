@@ -10,9 +10,17 @@
     flex-direction: column;
   }
 
+  @include mixins.respond-to(tabletOnly) {
+    margin: 30px 0 0 0;
+  }
+
   &__socials {
     @include mixins.respond-to(mobileOnly) {
       margin: 0 0 30px 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      display: none;
     }
   }
 
@@ -55,6 +63,10 @@
     @include mixins.respond-to(mobileOnly) {
       margin: 0 0 30px 0;
     }
+
+    @include mixins.respond-to(tabletOnly) {
+      width: 100%;
+    }
   }
 
   &__nav-list {
@@ -80,6 +92,12 @@
 
     @include mixins.respond-to(mobileOnly) {
       margin: 0 0 20px 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      justify-content: space-between;
+
+      margin: 0;
     }
   }
 

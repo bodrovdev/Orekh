@@ -3,7 +3,19 @@
 .blog {
 
   &__container {
-    padding: 80px 0 80px 0;
+    @include mixins.respond-to(tabletOnly) {
+      width: 100%;
+    }
+  }
+
+  padding: 80px 0 80px 0;
+
+  @include mixins.respond-to(mobileOnly) {
+    padding: 30px 0 30px 0;
+  }
+
+  @include mixins.respond-to(tabletOnly) {
+    padding: 50px 0 50px 0;
   }
 
   &__tabs {
@@ -37,6 +49,12 @@
 
       transition: font-weight, color 0.1s;
     }
+
+    @include mixins.respond-to(tabletOnly) {
+      &:first-of-type {
+        margin: 0 35px 23px 5%;
+      }
+    }
   }
 
   &__radio-hidden:checked+.blog__tabs-button {
@@ -65,11 +83,19 @@
 
     margin: 0 0 0 auto;
 
+    &:hover {}
+
     @include mixins.respond-to(mobileOnly) {
+      display: inline-block;
+
+      width: 100%;
+
       margin: 0 auto 30px 0;
     }
 
-    &:hover {}
+    @include mixins.respond-to(tabletOnly) {
+      margin: 0 5% 0 auto;
+    }
   }
 
   &__tabs-body {
@@ -86,6 +112,10 @@
 
     @include mixins.respond-to(mobileOnly) {
       flex-direction: column;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      overflow-x: scroll;
     }
   }
 
@@ -113,7 +143,7 @@
     width: 416px;
     min-height: 510px;
 
-    margin-right: 24px;
+    margin: 0 24px 0 0;
 
     &:last-child {
       margin: 0;
@@ -121,6 +151,18 @@
 
     @include mixins.respond-to(mobileOnly) {
       width: 100%;
+
+      margin: 0 0 30px 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      &:first-child {
+        margin: 0 24px 0 5%;
+      }
+
+      &:last-child {
+        margin: 0 5% 0 0;
+      }
     }
   }
 
