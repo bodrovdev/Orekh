@@ -1,0 +1,27 @@
+@@include('components/base-blocks/_base-header.html', {
+"title": "Орех - о нас"
+})
+<main class="page-content">
+
+  <div class="breadcrumbs">
+    <div class="breadcrumbs__container base-container">
+      <a class="breadcrumbs__link base-link" href="#">Главная</a>
+      <span class="breadcrumbs__current"> - О нас</span>
+    </div>
+  </div>
+
+  <section class="about-features">
+    <div class="about-features__container base-container">
+      <h1 class="about-features__title base-title">О компании</h1>
+      <picture>
+        <source type="image/webp"
+          srcset="img/image/content/about-features-heading.webp 1x, img/image/content/about-features-heading@2x.webp 2x">
+        <source type="image/png"
+          srcset="img/image/content/about-features-heading.png 1x, img/image/content/about-features-heading@2x.png 2x">
+        <img class="about-features__graphic" src="img/image/content/about-features-heading.png" alt="#">
+      </picture>
+    </div>
+  </section>
+
+</main>
+@@include('components/base-blocks/_base-footer.html')
