@@ -2,7 +2,15 @@
 
 .aboutPage-features {
 
-  margin: 0 0 80px 0;
+  margin: 0 0 75px 0;
+
+  @include mixins.respond-to(mobileOnly) {
+    margin: 0 0 50px 0;
+  }
+
+  @include mixins.respond-to(tabletOnly) {
+    margin: 0 0 50px 0;
+  }
 
   &__title {
     font-style: normal;
@@ -12,10 +20,17 @@
     color: var(--color-shark);
 
     margin: 0 0 30px 0;
+
+    @include mixins.respond-to(mobileOnly) {
+      font-size: 30px;
+      line-height: 130%;
+    }
   }
 
   &__img {
-    margin: 0 0 30px 0;
+    user-select: none;
+
+    margin: 0 0 26px 0;
 
     @include mixins.respond-to(mobileOnly) {
       width: 100%;
@@ -28,6 +43,13 @@
       height: auto;
       object-fit: cover;
     }
+
+    @include mixins.respond-to(desktopS) {
+      display: block;
+
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   &__underline {
@@ -38,14 +60,44 @@
 
     @include mixins.respond-to(mobileOnly) {
       flex-direction: column;
+      align-items: flex-start;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
   }
 
   &__underline-item {
-    margin: 0 160px 0 0;
 
-    &:last-of-type {
-      margin: 0;
+    @include mixins.respond-to(mobileOnly) {
+      margin: 0 0 20px 0;
+
+      &:last-of-type {
+        margin: 0 0 30px 0;
+      }
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      margin: 0 20px 0 0;
+
+      &:last-of-type {
+        margin: 0 20px 0 0;
+      }
+    }
+
+    @include mixins.respond-to(desktopS) {
+      margin: 0 50px 0 0;
+    }
+
+    @include mixins.respond-to(desktopD) {
+      margin: 0 160px 0 0;
+
+      &:last-of-type {
+        margin: 0;
+      }
     }
   }
 
@@ -53,20 +105,58 @@
     background: var(--gradient-main);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    user-select: none;
 
     font-weight: 700;
-    font-size: 60px;
-    line-height: 73px;
+
+    @include mixins.respond-to(mobileOnly) {
+      font-size: 50px;
+      line-height: 130%;
+    }
+
+    @include mixins.respond-to(tablet) {
+      font-size: 50px;
+      line-height: 130%;
+    }
+
+    @include mixins.respond-to(desktopD) {
+      font-size: 60px;
+      line-height: 73px;
+    }
   }
 
   &__underline-subtitle {
+    user-select: none;
+
     font-weight: 400;
     font-size: 16px;
     line-height: 21px;
     color: var(--color-shark);
   }
 
+  // &__underline-breakpoint {
+  //   @include mixins.respond-to(mobileOnly) {
+  //     display: none;
+  //   }
+
+  //   @include mixins.respond-to(tabletOnly) {
+  //     display: inline;
+  //   }
+
+  //   @include mixins.respond-to(desktopS) {
+  //     display: none;
+  //   }
+  // }
+
   &__underline-button {
-    margin: 0 0 0 auto;
+    @include mixins.respond-to(desktopS) {
+      margin: 0 0 0 auto;
+    }
+  }
+
+  @media only screen and (min-device-width: 768px) and (max-device-width: 870px) {
+    &__underline-button {
+      margin: 30px 0 0 0;
+    }
   }
 }
