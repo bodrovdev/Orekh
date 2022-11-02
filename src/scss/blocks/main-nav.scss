@@ -249,7 +249,7 @@
     line-height: 15px;
     color: var(--color-boulder);
 
-    transition: color 0.3s;
+    transition: background 0.3s, -webkit-background-clip 0.3s, -webkit-text-fill-color 0.3s;
 
     @include mixins.respond-to(mobileOnly) {
       font-size: 20px;
@@ -278,6 +278,8 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
+    transition: all 0.3s;
+
     &::after {
       content: "";
       position: absolute;
@@ -288,6 +290,8 @@
       height: 3px;
       background-color: var(--color-nutmeg);
       border-radius: 10px;
+
+      transition: all 0.3s;
 
       z-index: 10;
     }

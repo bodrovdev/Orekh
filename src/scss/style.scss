@@ -31,4 +31,5 @@
 @use 'blocks/about';
 @use 'blocks/blog';
 @use 'blocks/footer-main';
-@use 'blocks/underline';
+@use 'blocks/underline';@use 'blocks/aboutPage-features';
+@use 'blocks/aboutPage-description';

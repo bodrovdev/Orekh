@@ -36,3 +36,16 @@ navLinks.forEach((element) => {
     }
   })
 })
+
+function currentPage() {
+  let pageId = document.querySelector('.page-content').id;
+
+  let navLinks = document.querySelectorAll('.main-nav__mobile-link');
+  navLinks.forEach((child) => {
+    if (child.dataset.name === pageId) {
+      child.classList.add('main-nav__mobile-link--active');
+    }
+  })
+}
+
+currentPage();

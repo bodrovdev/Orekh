@@ -1,26 +1,47 @@
 @@include('components/base-blocks/_base-header.html', {
 "title": "Орех - о нас"
 })
-<main class="page-content">
+<main class="page-content" id="about">
 
   <div class="breadcrumbs">
     <div class="breadcrumbs__container base-container">
       <a class="breadcrumbs__link base-link" href="#">Главная</a>
-      <span class="breadcrumbs__current"> - О нас</span>
+      <span class="breadcrumbs__current"> — О нас</span>
     </div>
   </div>
 
-  <section class="about-features">
-    <div class="about-features__container base-container">
-      <h1 class="about-features__title base-title">О компании</h1>
+  <section class="aboutPage-features">
+    <div class="aboutPage-features__container base-container">
+      <h1 class="aboutPage-features__title base-title">О компании</h1>
       <picture>
         <source type="image/webp"
           srcset="img/image/content/about-features-heading.webp 1x, img/image/content/about-features-heading@2x.webp 2x">
         <source type="image/png"
           srcset="img/image/content/about-features-heading.png 1x, img/image/content/about-features-heading@2x.png 2x">
-        <img class="about-features__graphic" src="img/image/content/about-features-heading.png" alt="#">
+        <img class="aboutPage-features__img" src="img/image/content/about-features-heading.png" alt="#">
       </picture>
+      <div class="aboutPage-features__underline">
+        <div class="aboutPage-features__underline-item">
+          <h2 class="aboutPage-features__underline-title base-title">50+</h2>
+          <span class="aboutPage-features__underline-subtitle">магазинов</span>
+        </div>
+        <div class="aboutPage-features__underline-item">
+          <h2 class="aboutPage-features__underline-title base-title">14 лет</h2>
+          <span class="aboutPage-features__underline-subtitle">работаем без перебоя</span>
+        </div>
+        <div class="aboutPage-features__underline-item">
+          <h2 class="aboutPage-features__underline-title base-title">4000</h2>
+          <span class="aboutPage-features__underline-subtitle">отзывов</span>
+        </div>
+        <a class="aboutPage-features__underline-button main-button base-link" href="#">
+          <span class="main-button__text">Посмотреть презентацию</span>
+        </a>
+      </div>
     </div>
+  </section>
+
+  <section class="aboutPage-description">
+
   </section>
 
 </main>
