@@ -140,10 +140,53 @@
   </div>
 
   <section class="feedbackPage-tabs">
-    <h1 class="feedbackPage-tabs__title base-title"></h1>
     <div class="feedbackPage-tabs__container base-container">
-      <a class="feedbackPage-tabs__button" href="#">Аренда помещений</a>
-      <a class="feedbackPage-tabs__button" href="#">Рекламные услуги</a>
+      <h1 class="feedbackPage-tabs__title base-title">Аренда и реклама</h1>
+      <div class="feedbackPage-tabs__block">
+        <input class="feedbackPage-tabs__input-hidden visually-hidden" type="radio" name="form_radio" id="tab_form_1"
+          checked>
+        <label class="feedbackPage-tabs__button" for="tab_form_1">Аренда помещений</label>
+        <input class="feedbackPage-tabs__input-hidden visually-hidden" type="radio" name="form_radio" id="tab_form_2">
+        <label class="feedbackPage-tabs__button" for="tab_form_2">Рекламные услуги</label>
+        <div class="feedbackPage-tabs__body">
+          <div class="feedbackPage-tabs__form">
+            <form class="feedbackPage-tabs__form-item feedbackPage-tabs__form-item--1" id="form_1">
+              <div class="feedbackPage-tabs__form-column">
+                <label class="feedbackPage-tabs__form-label">Название компании
+                  <input class="feedbackPage-tabs__form-input" type="text" name="rent_company_name"
+                    id="rent_company_name" placeholder="Название компании">
+                </label>
+                <div class="feedbackPage-tabs__select-block">
+                  <span class="feedbackPage-tabs__select-label">Категория</span>
+                  <div class="feedbackPage-tabs__select" tabindex="0" id="form_1_select">
+                    <span class="feedbackPage-tabs__select-text"></span>
+                    <ul class="feedbackPage-tabs__select-options base-list" id="form_1_select_options">
+                      <li class="feedbackPage-tabs__select-option" tabindex="0" data-value="Развлечения">Развлечения
+                      </li>
+                      <li class="feedbackPage-tabs__select-option" tabindex="0" data-value="Еда">Еда</li>
+                      <li class="feedbackPage-tabs__select-option" tabindex="0" data-value="Одежда">Одежда</li>
+                    </ul>
+                    <input class="feedbackPage-tabs__select-input visually-hidden" type="text" name="form_1_select"
+                      id="form_1_select_input">
+                  </div>
+                </div>
+                <label class="feedbackPage-tabs__form-label">Ваш телефон
+                  <input class="feedbackPage-tabs__form-input" type="tel" name="rent_company_phone"
+                    id="rent_company_phone" placeholder="Введите номер телефона">
+                </label>
+                <button class="feedbackPage-tabs__form-submit main-button base-button" type="submit">
+                  <span class="main-button__text">Отправить</span>
+                </button>
+              </div>
+              <div class=" feedbackPage-tabs__form-column feedbackPage-tabs__form-column--right">
+              </div>
+            </form>
+            <form class="feedbackPage-tabs__form-item feedbackPage-tabs__form-item--2" id="form_2">
+              penis
+            </form>
+          </div>
+        </div>
+      </div>
       <div class="feedbackPage-tabs__tabs-body"></div>
     </div>
   </section>
