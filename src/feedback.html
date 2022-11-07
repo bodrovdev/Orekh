@@ -20,26 +20,65 @@
         <input class="feedbackPage-tabs__input-hidden visually-hidden" type="radio" name="form_radio" id="tab_form_2">
         <label class="feedbackPage-tabs__button" for="tab_form_2">Рекламные услуги</label>
         <div class="feedbackPage-tabs__body">
-          <div class="feedbackPage-tabs__form">
-            <form class="feedbackPage-tabs__form-item feedbackPage-tabs__form-item--1" id="form_1">
+          <div class="feedbackPage-tabs__forms">
+            <form class="feedbackPage-tabs__form-item feedbackPage-tabs__form-item--1" id="form1">
               <div class="feedbackPage-tabs__form-column">
                 <label class="feedbackPage-tabs__form-label">Название компании
-                  <input class="feedbackPage-tabs__form-input" type="text" name="rent_company_name"
-                    id="rent_company_name" placeholder="Название компании">
+                  <input class="feedbackPage-tabs__form-input" type="text" name="form1_company_name"
+                    id="form1_company_name" placeholder="Название компании">
                 </label>
                 <div class="feedbackPage-tabs__select-block">
                   <span class="feedbackPage-tabs__select-label">Категория</span>
-                  <div class="feedbackPage-tabs__select" tabindex="0" id="form_1_select">
+                  <div class="feedbackPage-tabs__select" tabindex="0" id="form1_select">
                     <span class="feedbackPage-tabs__select-text"></span>
-                    <ul class="feedbackPage-tabs__select-options base-list" id="form_1_select_options">
+                    <ul class="feedbackPage-tabs__select-options base-list" id="form1_select_options">
                       <li class="feedbackPage-tabs__select-option" tabindex="0" data-value="Развлечения">Развлечения
                       </li>
                       <li class="feedbackPage-tabs__select-option" tabindex="0" data-value="Еда">Еда</li>
                       <li class="feedbackPage-tabs__select-option" tabindex="0" data-value="Одежда">Одежда</li>
                     </ul>
-                    <input class="feedbackPage-tabs__select-input visually-hidden" type="text" name="form_1_select"
-                      id="form_1_select_input">
+                    <input class="feedbackPage-tabs__select-input visually-hidden" type="text" name="form1_category"
+                      id="form1_category">
                   </div>
+                </div>
+                <label class="feedbackPage-tabs__form-label">Ваш телефон
+                  <input class="feedbackPage-tabs__form-input" type="tel" name="form1_phone" id="form1_phone"
+                    placeholder="Введите номер телефона">
+                </label>
+                <button class="feedbackPage-tabs__form-submit main-button base-button" type="submit">
+                  <span class="main-button__text">Отправить</span>
+                </button>
+              </div>
+              <div class=" feedbackPage-tabs__form-column feedbackPage-tabs__form-column--right">
+                <label class="feedbackPage-tabs__form-label">Место размещения
+                  <input class="feedbackPage-tabs__form-input" type="text" name="form1_place" id="form1_place"
+                    placeholder="Введите площадь">
+                </label>
+                <label class="feedbackPage-tabs__form-label">Ваше имя
+                  <input class="feedbackPage-tabs__form-input" type="text" name="form1_name" id="form1_name"
+                    placeholder="Введите имя">
+                </label>
+                <label class="feedbackPage-tabs__form-label">Ваша почта
+                  <input class="feedbackPage-tabs__form-input" type="text" name="form1_email" id="form1_email"
+                    placeholder="Введите email">
+                </label>
+              </div>
+            </form>
+            <form class="feedbackPage-tabs__form-item feedbackPage-tabs__form-item--2" id="form2">
+              <div class="feedbackPage-tabs__form-column">
+                <label class="feedbackPage-tabs__form-label">Название компании
+                  <input class="feedbackPage-tabs__form-input" type="text" name="form2_company_name"
+                    id="form2_company_name" placeholder="Название компании">
+                </label>
+                <div class="feedbackPage-tabs__date-input">
+                  <label class="feedbackPage-tabs__form-label">Дата начала
+                    <input class="feedbackPage-tabs__form-input feedbackPage-tabs__date-start" type="text"
+                      name="form2_date_start" id="form2_date_start" placeholder="12.03.2022">
+                  </label>
+                  <label class="feedbackPage-tabs__form-label">Дата окончания публикации
+                    <input class="feedbackPage-tabs__form-input feedbackPage-tabs__date-end" type="text"
+                      name="form2_date_end" id="form2_date_end" placeholder="12.03.2022">
+                  </label>
                 </div>
                 <label class="feedbackPage-tabs__form-label">Ваш телефон
                   <input class="feedbackPage-tabs__form-input" type="tel" name="rent_company_phone"
@@ -50,15 +89,45 @@
                 </button>
               </div>
               <div class=" feedbackPage-tabs__form-column feedbackPage-tabs__form-column--right">
+                <label class="feedbackPage-tabs__form-label">Место размещения
+                  <input class="feedbackPage-tabs__form-input" type="text" name="rent_company_place"
+                    id="rent_company_place" placeholder="Введите площадь">
+                </label>
+                <label class="feedbackPage-tabs__form-label">Место размещения
+                  <input class="feedbackPage-tabs__form-input" type="text" name="rent_company_name"
+                    id="rent_company_place" placeholder="Введите площадь">
+                </label>
+                <label class="feedbackPage-tabs__form-label">Место размещения
+                  <input class="feedbackPage-tabs__form-input" type="text" name="rent_company_place"
+                    id="rent_company_place" placeholder="Введите площадь">
+                </label>
               </div>
             </form>
-            <form class="feedbackPage-tabs__form-item feedbackPage-tabs__form-item--2" id="form_2">
-              penis
-            </form>
+          </div>
+          <div class="feedbackPage-tabs__aside">
+            <div class="feedbackPage-tabs__aside-top">
+              <div class="feedbackPage-tabs__top-item">
+                <span class="feedbackPage-tabs__top-label">Островная аренда, реклама</span>
+                <a class="feedbackPage-tabs__top-email base-link"
+                  href="mailto: advert-mall@afid.ru">advert-mall@afid.ru</a>
+              </div>
+              <div class="feedbackPage-tabs__top-item">
+                <span class="feedbackPage-tabs__top-label">Отдел аренды</span>
+                <a class="feedbackPage-tabs__top-email base-link" href="mailto: Shiringan@mail.ru
+                ">Shiringan@mail.ru
+                </a>
+              </div>
+              <div class="feedbackPage-tabs__top-item">
+                <span class="feedbackPage-tabs__top-label">Отдел маркетинга</span>
+                <a class="feedbackPage-tabs__top-email base-link" href="mailto: ">marketing.afimall@afid.ru</a>
+              </div>
+            </div>
+            <div class="feedbackPage-tabs__bottom">
+              <a class="feedbackPage-tabs__bottom-tel base-link" href="tel:+74956443255">+7 495 644-32-55</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="feedbackPage-tabs__tabs-body"></div>
     </div>
   </section>
 

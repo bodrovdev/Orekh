@@ -18,12 +18,12 @@
     flex-wrap: wrap;
   }
 
-  #tab_form_1:checked~.feedbackPage-tabs__body .feedbackPage-tabs__form .feedbackPage-tabs__form-item--1 {
-    display: block;
+  #tab_form_1:checked~.feedbackPage-tabs__body .feedbackPage-tabs__forms .feedbackPage-tabs__form-item--1 {
+    display: flex;
   }
 
-  #tab_form_2:checked~.feedbackPage-tabs__body .feedbackPage-tabs__form .feedbackPage-tabs__form-item--2 {
-    display: block;
+  #tab_form_2:checked~.feedbackPage-tabs__body .feedbackPage-tabs__forms .feedbackPage-tabs__form-item--2 {
+    display: flex;
   }
 
   &__button {
@@ -64,12 +64,18 @@
   }
 
   &__body {
+    display: flex;
+
     width: 100%;
     height: 423px;
     background-color: var(--color-frangipani);
     border-radius: 0 18px 18px 18px;
 
-    padding: 42px 0 42px 23px;
+    padding: 42px 72px 42px 23px;
+  }
+
+  &__forms {
+    margin: 0 30px 0 0;
   }
 
   &__form-item {
@@ -79,6 +85,12 @@
   &__form-column {
     display: flex;
     flex-direction: column;
+
+    margin: 0 38px 0 0;
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   &__form-label {
@@ -143,7 +155,6 @@
     cursor: pointer;
 
     padding: 10px;
-    margin: 6px 0 0 0;
   }
 
   &__select-text {
@@ -194,5 +205,56 @@
       background: var(--color-frangipani);
       transition: background 0.3s;
     }
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__aside-top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    margin: 20px 0 0 0;
+  }
+
+  &__top-item {
+    display: flex;
+    flex-direction: column;
+
+    width: fit-content;
+
+    margin: 0 0 23px 0;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
+
+  &__top-label {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--color-black);
+  }
+
+  &__top-email {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--color-fiery-orange);
+  }
+
+  &__bottom-tel {
+    display: inline-block;
+
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 45px;
+    color: var(--color-black);
+
+    margin: 80px 0 0 0;
   }
 }
