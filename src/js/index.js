@@ -51,39 +51,86 @@ function currentPage() {
 
 currentPage();
 
-//Выпадашка в форме на странице аренда и реклама
-let form_select = document.getElementById('form1_select');
-let form_select_text = document.querySelector('.feedbackPage-tabs__select-text');
-let form_select_input = document.getElementById('form1_category');
+//Выпадающее меню с выбором категории на странице feedback
+let form1_select = document.getElementById('form1_select');
+let form1_select_text = document.getElementById('form1_select_text');
+let form1_select_input = document.getElementById('form1_category');
 
-let form_select_options = document.getElementById('form1_select_options');
-let form_select_options_items = document.querySelectorAll('.feedbackPage-tabs__select-option');
+let form1_select_options = document.getElementById('form1_select_options');
+let form1_select_options_items = document.querySelectorAll('.feedbackPage-tabs__select-option--category');
 
-form_select.addEventListener('click', () => {
-  form_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+form1_select.addEventListener('click', () => {
+  form1_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+  form1_select.classList.toggle('feedbackPage-tabs__select--active');
 })
 
-form_select.addEventListener('keypress', function (event) {
-  if (document.activeElement === form_select && (event.key === "Enter" || event.key === "Space")) {
+form1_select.addEventListener('keypress', function (event) {
+  if (document.activeElement === form1_select && (event.key === "Enter" || event.key === "Space")) {
     event.preventDefault();
-    form_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+    form1_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+    form1_select.classList.toggle('feedbackPage-tabs__select--active');
   }
 });
 
-form_select_options_items.forEach((child) => {
+form1_select_options_items.forEach((child) => {
   child.addEventListener('click', () => {
-    form_select_text.textContent = child.dataset.value;
-    form_select_input.value = child.dataset.value;
+    form1_select_text.textContent = child.dataset.value;
+    form1_select_input.value = child.dataset.value;
+    console.log(form1_select_input.value);
 
-    form_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+    form1_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+    form1_select.classList.remove('feedbackPage-tabs__select--active');
   })
 })
 
 document.addEventListener('click', (event) => {
-  if (form_select_options.classList.contains('feedbackPage-tabs__select-options--active')
-    && event.target !== form_select_options
-    && event.target !== form_select_text
-    && event.target !== form_select) {
-    form_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+  if (form1_select_options.classList.contains('feedbackPage-tabs__select-options--active')
+    && event.target !== form1_select_options
+    && event.target !== form1_select_text
+    && event.target !== form1_select) {
+    form1_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+    form1_select.classList.remove('feedbackPage-tabs__select--active');
+  }
+})
+
+//Выпадающее меню с выбором места размещения на странице feedback
+let form2_select = document.getElementById('form2_select');
+let form2_select_text = document.getElementById('form2_select_text');
+let form2_select_input = document.getElementById('form2_place');
+
+let form2_select_options = document.getElementById('form2_select_options');
+let form2_select_options_items = document.querySelectorAll('.feedbackPage-tabs__select-option--place');
+
+form2_select.addEventListener('click', () => {
+  form2_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+  form2_select.classList.toggle('feedbackPage-tabs__select--active');
+})
+
+form2_select.addEventListener('keypress', function (event) {
+  if (document.activeElement === form2_select && (event.key === "Enter" || event.key === "Space")) {
+    event.preventDefault();
+    form2_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+    form2_select.classList.toggle('feedbackPage-tabs__select--active');
+  }
+});
+
+form2_select_options_items.forEach((child) => {
+  child.addEventListener('click', () => {
+    form2_select_text.textContent = child.dataset.value;
+    form2_select_input.value = child.dataset.value;
+    console.log(form2_select_input.value);
+
+    form2_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+    form2_select.classList.remove('feedbackPage-tabs__select--active');
+  })
+})
+
+document.addEventListener('click', (event) => {
+  if (form2_select_options.classList.contains('feedbackPage-tabs__select-options--active')
+    && event.target !== form2_select_options
+    && event.target !== form2_select_text
+    && event.target !== form2_select) {
+    form2_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+    form2_select.classList.remove('feedbackPage-tabs__select--active');
   }
 })

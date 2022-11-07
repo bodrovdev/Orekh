@@ -34,6 +34,7 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^4.1.0",
     "gulp-terser": "^2.1.0",
+    "imask": "^6.4.3",
     "postcss-preset-env": "^7.2.3",
     "require-dir": "^1.2.0",
     "sass": "^1.45.0",
