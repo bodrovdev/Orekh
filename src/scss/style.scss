@@ -31,7 +31,9 @@
 @use 'blocks/about';
 @use 'blocks/blog';
 @use 'blocks/footer-main';
-@use 'blocks/underline';@use 'blocks/aboutPage-features';
+@use 'blocks/underline';
+@use 'blocks/aboutPage-features';
 @use 'blocks/aboutPage-description';
 @use 'blocks/contactsPage-contacts';
 @use 'blocks/feedbackPage-tabs';
+@use 'blocks/schemePage-map';

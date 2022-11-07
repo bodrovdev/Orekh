@@ -1,0 +1,131 @@
+@use "../mixins";
+
+.schemePage-map {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    color: var(--color-shark);
+
+    margin: 0 auto 0 0;
+  }
+
+  &__tabs-button {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 57px;
+    height: 56px;
+    background: var(--gradient-main);
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+
+    margin: 0 17px 0 0;
+
+    &:last-of-type {
+      margin: 0;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%) scale(0);
+
+      width: 100%;
+      height: 100%;
+      background-color: var(--color-flush-orange);
+      border-radius: 50%;
+
+      transition: transform 0.3s;
+    }
+  }
+
+  &__button-text {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    color: var(--color-white);
+
+    transition: color 0.3s;
+
+    z-index: 2;
+  }
+
+  &__tabs-button:hover::before {
+    transform: translateY(-50%) translateX(-50%) scale(1);
+
+    transition: transform 0.3s;
+  }
+
+  &__tabs-button:hover .schemePage-map__button-text {
+    color: var(--color-black);
+
+    transition: color 0.3s;
+  }
+
+  &__tabs-input:checked+label::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) scale(1);
+
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-flush-orange);
+    border-radius: 50%;
+
+    transition: transform 0.3s;
+  }
+
+  &__tabs-input:checked+label span {
+    color: var(--color-black);
+
+    transition: color 0.3s;
+  }
+
+  &__tabs-body {
+    width: 100%;
+    height: auto;
+
+    margin: 59px 0 77px 0;
+  }
+
+  &__tabs-item {
+    display: none;
+  }
+
+  #tab_map_1:checked~.schemePage-map__tabs-body .schemePage-map__tabs-item--1 {
+    display: block;
+  }
+
+  #tab_map_2:checked~.schemePage-map__tabs-body .schemePage-map__tabs-item--2 {
+    display: block;
+  }
+
+  #tab_map_3:checked~.schemePage-map__tabs-body .schemePage-map__tabs-item--3 {
+    display: block;
+  }
+
+  #tab_map_4:checked~.schemePage-map__tabs-body .schemePage-map__tabs-item--4 {
+    display: block;
+  }
+
+  #tab_map_5:checked~.schemePage-map__tabs-body .schemePage-map__tabs-item--5 {
+    display: block;
+  }
+
+}

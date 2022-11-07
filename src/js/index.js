@@ -52,85 +52,109 @@ function currentPage() {
 currentPage();
 
 //Выпадающее меню с выбором категории на странице feedback
-let form1_select = document.getElementById('form1_select');
-let form1_select_text = document.getElementById('form1_select_text');
-let form1_select_input = document.getElementById('form1_category');
-
-let form1_select_options = document.getElementById('form1_select_options');
-let form1_select_options_items = document.querySelectorAll('.feedbackPage-tabs__select-option--category');
-
-form1_select.addEventListener('click', () => {
-  form1_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
-  form1_select.classList.toggle('feedbackPage-tabs__select--active');
-})
-
-form1_select.addEventListener('keypress', function (event) {
-  if (document.activeElement === form1_select && (event.key === "Enter" || event.key === "Space")) {
-    event.preventDefault();
-    form1_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
-    form1_select.classList.toggle('feedbackPage-tabs__select--active');
+window.addEventListener('load', () => {
+  if (document.getElementById('form1_select') === null) {
+    return;
   }
-});
+  else {
+    let form1_select = document.getElementById('form1_select');
+    let form1_select_text = document.getElementById('form1_select_text');
+    let form1_select_input = document.getElementById('form1_category');
 
-form1_select_options_items.forEach((child) => {
-  child.addEventListener('click', () => {
-    form1_select_text.textContent = child.dataset.value;
-    form1_select_input.value = child.dataset.value;
-    console.log(form1_select_input.value);
+    let form1_select_options = document.getElementById('form1_select_options');
+    let form1_select_options_items = document.querySelectorAll('.feedbackPage-tabs__select-option--category');
 
-    form1_select_options.classList.remove('feedbackPage-tabs__select-options--active');
-    form1_select.classList.remove('feedbackPage-tabs__select--active');
-  })
-})
+    form1_select.addEventListener('click', () => {
+      form1_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+      form1_select.classList.toggle('feedbackPage-tabs__select--active');
+    })
 
-document.addEventListener('click', (event) => {
-  if (form1_select_options.classList.contains('feedbackPage-tabs__select-options--active')
-    && event.target !== form1_select_options
-    && event.target !== form1_select_text
-    && event.target !== form1_select) {
-    form1_select_options.classList.remove('feedbackPage-tabs__select-options--active');
-    form1_select.classList.remove('feedbackPage-tabs__select--active');
+    form1_select.addEventListener('keypress', function (event) {
+      if (document.activeElement === form1_select && (event.key === "Enter" || event.key === "Space")) {
+        event.preventDefault();
+        form1_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+        form1_select.classList.toggle('feedbackPage-tabs__select--active');
+      }
+    });
+
+    form1_select_options_items.forEach((child) => {
+      child.addEventListener('click', () => {
+        form1_select_text.textContent = child.dataset.value;
+        form1_select_input.value = child.dataset.value;
+        console.log(form1_select_input.value);
+
+        form1_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+        form1_select.classList.remove('feedbackPage-tabs__select--active');
+      })
+    })
+
+    document.addEventListener('click', (event) => {
+      if (form1_select_options.classList.contains('feedbackPage-tabs__select-options--active')
+        && event.target !== form1_select_options
+        && event.target !== form1_select_text
+        && event.target !== form1_select) {
+        form1_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+        form1_select.classList.remove('feedbackPage-tabs__select--active');
+      }
+    })
   }
 })
 
 //Выпадающее меню с выбором места размещения на странице feedback
-let form2_select = document.getElementById('form2_select');
-let form2_select_text = document.getElementById('form2_select_text');
-let form2_select_input = document.getElementById('form2_place');
+window.addEventListener('load', () => {
+  if (document.getElementById('form1_select') === null) {
+    return;
+  }
+  else {
+    let form2_select = document.getElementById('form2_select');
+    let form2_select_text = document.getElementById('form2_select_text');
+    let form2_select_input = document.getElementById('form2_place');
 
-let form2_select_options = document.getElementById('form2_select_options');
-let form2_select_options_items = document.querySelectorAll('.feedbackPage-tabs__select-option--place');
+    let form2_select_options = document.getElementById('form2_select_options');
+    let form2_select_options_items = document.querySelectorAll('.feedbackPage-tabs__select-option--place');
 
-form2_select.addEventListener('click', () => {
-  form2_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
-  form2_select.classList.toggle('feedbackPage-tabs__select--active');
+    form2_select.addEventListener('click', () => {
+      form2_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+      form2_select.classList.toggle('feedbackPage-tabs__select--active');
+    })
+
+    form2_select.addEventListener('keypress', function (event) {
+      if (document.activeElement === form2_select && (event.key === "Enter" || event.key === "Space")) {
+        event.preventDefault();
+        form2_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
+        form2_select.classList.toggle('feedbackPage-tabs__select--active');
+      }
+    });
+
+    form2_select_options_items.forEach((child) => {
+      child.addEventListener('click', () => {
+        form2_select_text.textContent = child.dataset.value;
+        form2_select_input.value = child.dataset.value;
+        console.log(form2_select_input.value);
+
+        form2_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+        form2_select.classList.remove('feedbackPage-tabs__select--active');
+      })
+    })
+
+    document.addEventListener('click', (event) => {
+      if (form2_select_options.classList.contains('feedbackPage-tabs__select-options--active')
+        && event.target !== form2_select_options
+        && event.target !== form2_select_text
+        && event.target !== form2_select) {
+        form2_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+        form2_select.classList.remove('feedbackPage-tabs__select--active');
+      }
+    })
+  }
 })
 
-form2_select.addEventListener('keypress', function (event) {
-  if (document.activeElement === form2_select && (event.key === "Enter" || event.key === "Space")) {
-    event.preventDefault();
-    form2_select_options.classList.toggle('feedbackPage-tabs__select-options--active');
-    form2_select.classList.toggle('feedbackPage-tabs__select--active');
-  }
-});
+//Получение дата-атрибута на ховер
 
-form2_select_options_items.forEach((child) => {
-  child.addEventListener('click', () => {
-    form2_select_text.textContent = child.dataset.value;
-    form2_select_input.value = child.dataset.value;
-    console.log(form2_select_input.value);
+let tests = document.querySelectorAll('#test');
 
-    form2_select_options.classList.remove('feedbackPage-tabs__select-options--active');
-    form2_select.classList.remove('feedbackPage-tabs__select--active');
+tests.forEach((child) => {
+  child.addEventListener('mouseover', (e) => {
+    console.log(e.target.parentElement.dataset.prekol);
   })
-})
-
-document.addEventListener('click', (event) => {
-  if (form2_select_options.classList.contains('feedbackPage-tabs__select-options--active')
-    && event.target !== form2_select_options
-    && event.target !== form2_select_text
-    && event.target !== form2_select) {
-    form2_select_options.classList.remove('feedbackPage-tabs__select-options--active');
-    form2_select.classList.remove('feedbackPage-tabs__select--active');
-  }
 })
