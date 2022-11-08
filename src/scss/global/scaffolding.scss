@@ -49,3 +49,51 @@ body {
 		line-height: 18px;
 	}
 }
+
+// @include mixins.respond-to(mobileOnly) {
+// 	::-webkit-scrollbar {
+// 		-webkit-appearance: none;
+// 		-webkit-overflow-scrolling: auto;
+// 	}
+
+// 	::-webkit-scrollbar:vertical {
+// 		width: 10px;
+// 	}
+
+// 	::-webkit-scrollbar:horizontal {
+// 		height: 10px;
+// 	}
+
+// 	::-webkit-scrollbar-thumb {
+// 		background-color: var(--color-flush-orange);
+// 		border-radius: 17px;
+// 	}
+
+// 	::-webkit-scrollbar-track {
+// 		background-color: #ffffff;
+// 		border-radius: 17px;
+// 	}
+// }
+
+// @include mixins.respond-to(desktopS) {
+// 	::-webkit-scrollbar {
+// 		-webkit-appearance: none;
+// 		-webkit-overflow-scrolling: auto;
+// 	}
+
+// 	::-webkit-scrollbar:vertical {
+// 		width: 7px;
+// 	}
+
+// 	::-webkit-scrollbar:horizontal {
+// 		height: 7px;
+// 	}
+
+// 	::-webkit-scrollbar-thumb {
+// 		background-color: var(--color-nutmeg);
+// 	}
+
+// 	::-webkit-scrollbar-track {
+// 		background-color: #ffffff;
+// 	}
+// }

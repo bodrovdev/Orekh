@@ -149,12 +149,35 @@ window.addEventListener('load', () => {
   }
 })
 
-//Получение дата-атрибута на ховер
+//Следящий за мышью блок с данными о магазина на стране scheme
+let flying_div = document.getElementById('fly');
 
-let tests = document.querySelectorAll('#test');
+const onMouseMove = (e) => {
+  flying_div.style.left = e.pageX + 'px';
+  flying_div.style.top = e.pageY + 'px';
+}
 
-tests.forEach((child) => {
-  child.addEventListener('mouseover', (e) => {
-    console.log(e.target.parentElement.dataset.prekol);
+document.addEventListener('mousemove', onMouseMove);
+
+//Получение информации о магазине и её отображение в появляющемся блоке с данными
+let map_items = document.querySelectorAll('.schemePage-map__item');
+let flying_div_shopname = document.getElementById('fly_shopname');
+let flying_div_isopen = document.getElementById('fly_isopen');
+let flying_div_worktime = document.getElementById('fly_worktime');
+
+map_items.forEach((child) => {
+  if (window.screen.width < 768) {
+    child.removeAttribute('href');
+  }
+
+  child.addEventListener('mouseenter', (e) => {
+    flying_div.classList.add('schemePage-map__fly--active');
+    flying_div_shopname.textContent = e.target.dataset.name;
+  })
+
+  child.addEventListener('mouseleave', (e) => {
+    flying_div.classList.remove('schemePage-map__fly--active');
   })
 })
+
+console.log(window.screen.width);
