@@ -180,4 +180,28 @@ map_items.forEach((child) => {
   })
 })
 
-console.log(window.screen.width);
+//Модальное окно с информацией о выбранном магазине на мобильной версии сайта
+let tabs_modal = document.getElementById('tabs_modal');
+let tabs_modal_close = document.getElementById('tabs_modal_close');
+
+map_items.forEach((child) => {
+  child.addEventListener('click', () => {
+    tabs_modal.classList.add('schemePage-map__tabs-modal--active');
+    disableBodyScroll(tabs_modal);
+  })
+})
+
+tabs_modal_close.addEventListener('click', () => {
+  tabs_modal.classList.remove('schemePage-map__tabs-modal--active');
+  enableBodyScroll(tabs_modal);
+})
+
+tabs_modal.addEventListener('click', (e) => {
+  if (e.target !== e.currentTarget) {
+    return;
+  }
+  else {
+    tabs_modal.classList.remove('schemePage-map__tabs-modal--active');
+    enableBodyScroll(tabs_modal);
+  }
+})
