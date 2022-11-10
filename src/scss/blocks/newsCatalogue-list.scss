@@ -1,0 +1,131 @@
+@use "../mixins";
+
+.newsCatalogue-list {
+
+  padding: 0 0 80px 0;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    align-self: flex-start;
+
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 49px;
+    color: var(--color-shark);
+
+    margin: 0 0 30px 0;
+  }
+
+  &__items-wrapper {
+
+    @include mixins.respond-to(mobileOnly) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin: 0 0 50px 0;
+    }
+
+    @include mixins.respond-to(tablet) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      width: 100%;
+    }
+
+    @include mixins.respond-to(desktopM) {
+      display: grid;
+      grid-template: 1fr / repeat(3, auto);
+      grid-auto-flow: row;
+      grid-gap: 75px 24px;
+
+      margin: 0 0 75px 0;
+    }
+  }
+
+  &__item {
+    width: 415px;
+
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+      margin: 0 0 30px 0;
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    @include mixins.respond-to(tablet) {
+      margin: 0 0 75px 0;
+    }
+  }
+
+  &__item-image {
+    overflow: hidden;
+    border-radius: 16px;
+
+    margin: 0 0 10px 0;
+  }
+
+  &__item-img {
+    vertical-align: top;
+    user-select: none;
+    border-radius: 16px;
+
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+
+    @include mixins.respond-to(mobileOnly) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__item-date {
+    display: inline-block;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: var(--color-boulder);
+
+    margin: 0 0 30px 0;
+  }
+
+  &__item-title {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 31px;
+    color: var(--color-shark);
+
+    transition: color 0.3s;
+
+    margin: 0 0 15px 0;
+  }
+
+
+  &__item-link:hover .newsCatalogue-list__item-title {
+    color: var(--color-flush-orange);
+
+    transition: color 0.3s;
+  }
+
+  &__item-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: var(--color-boulder);
+  }
+}
