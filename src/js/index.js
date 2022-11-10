@@ -152,31 +152,51 @@ window.addEventListener('load', () => {
 //Следящий за мышью блок с данными о магазина на стране scheme
 let flying_div = document.getElementById('fly');
 
-const onMouseMove = (e) => {
-  flying_div.style.left = e.pageX + 'px';
-  flying_div.style.top = e.pageY + 'px';
-}
+window.addEventListener('load', () => {
+  if (document.getElementById('tabs_scheme') === null) {
+    return;
+  }
+  else {
+    const onMouseMove = (e) => {
+      flying_div.style.left = e.pageX + 'px';
+      flying_div.style.top = e.pageY + 'px';
+    }
 
-document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mousemove', onMouseMove);
+  }
+})
 
 //Получение информации о магазине и её отображение в появляющемся блоке с данными
 let map_items = document.querySelectorAll('.schemePage-map__item');
 let flying_div_shopname = document.getElementById('fly_shopname');
-let flying_div_worktime = document.getElementById('fly_worktime');
+let flying_div_workstart = document.getElementById('fly_workstart');
+let flying_div_workend = document.getElementById('fly_workend');
 let flying_div_isopen = document.getElementById('fly_isopen');
 
-window.addEventListener('click', () => {
-  map_items.forEach((child) => {
-    if (window.screen.width < 1024) {
-      child.removeAttribute('href');
-    }
-  })
-})
-
 map_items.forEach((child) => {
+  if (window.screen.width < 1024) {
+    child.removeAttribute('href');
+  }
+
   child.addEventListener('mouseenter', (e) => {
     flying_div.classList.add('schemePage-map__fly--active');
     flying_div_shopname.textContent = e.target.dataset.name;
+    flying_div_workstart.textContent = e.target.dataset.open;
+    flying_div_workend.textContent = e.target.dataset.close;
+
+    let current_date = new Date();
+    let start_time = e.target.dataset.open.split(':');
+    let d1 = new Date(current_date.getFullYear(), current_date.getMonth(), current_date.getDate(), parseInt(start_time[0]), parseInt(start_time[1]));
+
+    let end_time = e.target.dataset.close.split(':');
+    let d2 = new Date(current_date.getFullYear(), current_date.getMonth(), current_date.getDate(), parseInt(end_time[0]), parseInt(end_time[1]));
+
+    if (current_date >= d1 && current_date <= d2) {
+      flying_div_isopen.textContent = 'Открыто';
+    }
+    else {
+      flying_div_isopen.textContent = 'Закрыто';
+    }
   })
 
   child.addEventListener('mouseleave', (e) => {
@@ -190,6 +210,7 @@ let tabs_modal_close = document.getElementById('tabs_modal_close');
 let tabs_modal_name = document.getElementById('tabs_modal_name');
 let tabs_modal_workstart = document.getElementById('tabs_modal_workstart');
 let tabs_modal_workend = document.getElementById('tabs_modal_workend');
+let tabs_modal_isopen = document.getElementById('tabs_modal_isopen');
 
 map_items.forEach((child) => {
   child.addEventListener('click', () => {
@@ -197,9 +218,31 @@ map_items.forEach((child) => {
     tabs_modal_name.textContent = child.dataset.name;
     tabs_modal_workstart.textContent = child.dataset.open;
     tabs_modal_workend.textContent = child.dataset.close;
+
+    let current_date = new Date();
+    let start_time = child.dataset.open.split(':');
+    let d1 = new Date(current_date.getFullYear(), current_date.getMonth(), current_date.getDate(), parseInt(start_time[0]), parseInt(start_time[1]));
+
+    let end_time = child.dataset.close.split(':');
+    let d2 = new Date(current_date.getFullYear(), current_date.getMonth(), current_date.getDate(), parseInt(end_time[0]), parseInt(end_time[1]));
+
+    if (current_date >= d1 && current_date <= d2) {
+      tabs_modal_isopen.textContent = 'Открыто';
+    }
+    else {
+      tabs_modal_isopen.textContent = 'Закрыто';
+    }
+
   })
 })
 
-tabs_modal_close.addEventListener('click', () => {
-  tabs_modal.classList.remove('schemePage-map__tabs-modal--active');
+window.addEventListener('load', () => {
+  if (document.getElementById('tabs_scheme') === null) {
+    return;
+  }
+  else {
+    tabs_modal_close.addEventListener('click', () => {
+      tabs_modal.classList.remove('schemePage-map__tabs-modal--active');
+    })
+  }
 })

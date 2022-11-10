@@ -405,13 +405,17 @@
 
   &__item--path:hover path {
     filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
+
+    @include mixins.respond-to(tablet) {
+      cursor: pointer;
+    }
   }
 
   &__item--rect:hover rect {
     filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
-  }
-}
 
-.kal {
-  filter: invert(31%) sepia(73%) saturate(5776%) hue-rotate(349deg) brightness(86%) contrast(141%);
+    @include mixins.respond-to(tablet) {
+      cursor: pointer;
+    }
+  }
 }
