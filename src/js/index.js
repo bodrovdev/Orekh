@@ -2,48 +2,48 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 //Мобильное меню
 let burger = document.getElementById('burger');
-let mobileMenu = document.getElementById('mobile-menu');
-let navLinks = document.querySelectorAll('.main-nav__mobile-link');
+let mobile_menu = document.getElementById('mobile-menu');
+let nav_links = document.querySelectorAll('.main-nav__mobile-link');
 
 burger.addEventListener('click', () => {
   burger.classList.toggle('main-nav__burger--active');
 
-  if (mobileMenu.classList.contains('main-nav__mobile-menu--active')) {
-    mobileMenu.classList.remove('main-nav__mobile-menu--active');
-    mobileMenu.classList.add('main-nav__mobile-menu--closing');
+  if (mobile_menu.classList.contains('main-nav__mobile-menu--active')) {
+    mobile_menu.classList.remove('main-nav__mobile-menu--active');
+    mobile_menu.classList.add('main-nav__mobile-menu--closing');
   }
   else {
-    mobileMenu.classList.remove('main-nav__mobile-menu--closing');
-    mobileMenu.classList.add('main-nav__mobile-menu--active');
+    mobile_menu.classList.remove('main-nav__mobile-menu--closing');
+    mobile_menu.classList.add('main-nav__mobile-menu--active');
   }
 
   if (burger.classList.contains('main-nav__burger--active')) {
-    disableBodyScroll(mobileMenu);
+    disableBodyScroll(mobile_menu);
   }
   else {
-    enableBodyScroll(mobileMenu);
+    enableBodyScroll(mobile_menu);
   }
 })
 
-navLinks.forEach((element) => {
+nav_links.forEach((element) => {
   element.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('main-nav__mobile-menu--active')) {
-      mobileMenu.classList.remove('main-nav__mobile-menu--active');
-      mobileMenu.classList.add('main-nav__mobile-menu--closing');
+    if (mobile_menu.classList.contains('main-nav__mobile-menu--active')) {
+      mobile_menu.classList.remove('main-nav__mobile-menu--active');
+      mobile_menu.classList.add('main-nav__mobile-menu--closing');
 
       burger.classList.remove('main-nav__burger--active');
-      enableBodyScroll(mobileMenu);
+      enableBodyScroll(mobile_menu);
     }
   })
 })
 
 //Активное состояние пункта навигации текущей страницы
 function currentPage() {
-  let pageId = document.querySelector('.page-content').id;
+  let page_id = document.querySelector('.page-content').id;
 
-  let navLinks = document.querySelectorAll('.main-nav__mobile-link');
-  navLinks.forEach((child) => {
-    if (child.dataset.name === pageId) {
+  let nav_links = document.querySelectorAll('.main-nav__mobile-link');
+  nav_links.forEach((child) => {
+    if (child.dataset.name === page_id) {
       child.classList.add('main-nav__mobile-link--active');
     }
   })
@@ -162,14 +162,18 @@ document.addEventListener('mousemove', onMouseMove);
 //Получение информации о магазине и её отображение в появляющемся блоке с данными
 let map_items = document.querySelectorAll('.schemePage-map__item');
 let flying_div_shopname = document.getElementById('fly_shopname');
-let flying_div_isopen = document.getElementById('fly_isopen');
 let flying_div_worktime = document.getElementById('fly_worktime');
+let flying_div_isopen = document.getElementById('fly_isopen');
+
+window.addEventListener('click', () => {
+  map_items.forEach((child) => {
+    if (window.screen.width < 1024) {
+      child.removeAttribute('href');
+    }
+  })
+})
 
 map_items.forEach((child) => {
-  if (window.screen.width < 768) {
-    child.removeAttribute('href');
-  }
-
   child.addEventListener('mouseenter', (e) => {
     flying_div.classList.add('schemePage-map__fly--active');
     flying_div_shopname.textContent = e.target.dataset.name;

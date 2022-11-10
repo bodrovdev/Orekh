@@ -12,6 +12,8 @@
 
     @include mixins.respond-to(mobileOnly) {
       width: 100%;
+
+      justify-content: flex-start;
     }
 
     overflow: hidden;
@@ -55,11 +57,13 @@
     }
 
     @include mixins.respond-to(mobileOnly) {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
+
+      margin: 0 20px 0 0;
 
       &:first-of-type {
-        margin: 0 17px 0 5%;
+        margin: 0 20px 0 5%;
       }
 
       &:last-of-type {
@@ -202,6 +206,14 @@
     height: auto;
 
     margin: 59px 0 77px 0;
+
+    @include mixins.respond-to(mobileOnly) {
+      margin: 30px 0 50px 0;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      margin: 0;
+    }
   }
 
   &__tabs-modal {
@@ -226,7 +238,13 @@
 
     z-index: 100;
 
-    @include mixins.respond-to(tablet) {
+    @include mixins.respond-to(tabletOnly) {
+      bottom: 0;
+
+      width: 100%;
+    }
+
+    @include mixins.respond-to(desktopS) {
       display: none;
 
       user-select: none;
@@ -238,7 +256,7 @@
     transform: translateX(-50%) translateY(0);
     transition: transform 0.3s;
 
-    @include mixins.respond-to(tablet) {
+    @include mixins.respond-to(desktopS) {
       display: none;
 
       user-select: none;
@@ -350,8 +368,13 @@
     @include mixins.respond-to(mobileOnly) {
       overflow-x: auto;
 
-      @include mixins.respond-to(mobileOnly) {
-        padding: 0 5% 0 5%;
+      padding: 0 5% 0 5%;
+    }
+
+    @include mixins.respond-to(tablet) {
+      & svg {
+        width: 100%;
+        max-width: 100%;
       }
     }
   }
