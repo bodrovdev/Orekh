@@ -1,14 +1,26 @@
 @use "../mixins";
 
 .similars {
-	margin: 0 0 80px 0;
+
+	margin: 80px 0 80px 0;
 
 	@include mixins.respond-to(mobileOnly) {
+		padding: 0 5% 0 5%;
 		margin: 0 0 30px 0;
 	}
 
 	@include mixins.respond-to(tabletOnly) {
-		margin: 0 0 50px 0;
+		margin: 0 0 20px 0;
+	}
+
+	&__container {
+		@include mixins.respond-to(mobileOnly) {
+			width: 100%;
+		}
+
+		@include mixins.respond-to(tabletOnly) {
+			width: 100%;
+		}
 	}
 
 	&__topline {
@@ -21,6 +33,10 @@
 		@include mixins.respond-to(mobileOnly) {
 			flex-direction: column;
 			align-items: flex-start;
+		}
+
+		@include mixins.respond-to(tabletOnly) {
+			padding: 0 5% 0 5%;
 		}
 	}
 
@@ -39,20 +55,24 @@
 		}
 	}
 
-	&__more-link {
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 21px;
-		color: var(--color-hawaiian-tan);
-
-	}
-
 	&__body {
-		display: flex;
-		justify-content: space-between;
-
 		@include mixins.respond-to(mobileOnly) {
+			display: flex;
 			flex-direction: column;
+			align-items: center;
+		}
+
+		@include mixins.respond-to(tabletOnly) {
+			display: flex;
+
+			width: 100%;
+
+			overflow-x: auto;
+		}
+
+		@include mixins.respond-to(desktopS) {
+			display: flex;
+			justify-content: space-between;
 		}
 	}
 
@@ -61,17 +81,28 @@
 		flex-direction: column;
 
 		@include mixins.respond-to(mobileOnly) {
-			width: 100%;
+			margin: 0 0 30px 0;
+		}
 
-			margin: 0 0 20px 0;
+		@include mixins.respond-to(tabletOnly) {
+			margin: 0 24px 0 0;
+
+			&:first-child {
+				padding: 0 0 0 5%;
+			}
 
 			&:last-child {
+				padding: 0 5% 0 0;
 				margin: 0;
 			}
 		}
 
-		@include mixins.respond-to(tablet) {
-			width: 300px;
+		@include mixins.respond-to(desktopS) {
+			width: 280px;
+		}
+
+		@include mixins.respond-to(desktopD) {
+			width: 350px;
 		}
 
 		@include mixins.respond-to(desktopM) {
@@ -80,24 +111,41 @@
 	}
 
 	&__item-image {
-		height: auto;
+		margin: 0 0 10px 0;
+	}
+
+	&__item-img {
+		display: block;
+		vertical-align: top;
 
 		@include mixins.respond-to(mobileOnly) {
 			width: 100%;
+			height: auto;
+			object-fit: cover;
 		}
 
-		@include mixins.respond-to(tablet) {
-			width: 300px;
+		@include mixins.respond-to(desktopS) {
+			width: 280px;
+			height: auto;
+		}
+
+		@include mixins.respond-to(desktopD) {
+			width: 350px;
+			height: auto;
 		}
 
 		@include mixins.respond-to(desktopM) {
 			width: 416px;
+			height: auto;
 		}
 	}
 
-	&__item-img {
-		width: 100%;
-		height: auto;
+	&__more-link {
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 21px;
+		color: var(--color-hawaiian-tan);
+
 	}
 
 	&__item-date {
