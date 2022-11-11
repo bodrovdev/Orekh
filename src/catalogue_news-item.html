@@ -1,38 +1,64 @@
 @@include('components/base-blocks/_base-header.html', {
-"title": "Орех - Новость"
+"title": "Орех - Новость",
 })
+
 <main class="page-content" id="catalogue_news-item">
+	<div class="breadcrumbs">
+		<div class="breadcrumbs__container base-container">
+			<a class="breadcrumbs__link base-link" href="index.html">Главная</a>
+			<a class="breadcrumbs__link base-link" href="catalogue_news.html"> — Новости </a>
+			<span class="breadcrumbs__current"> — Текущая новость</span>
+		</div>
+	</div>
 
-  <div class="breadcrumbs">
-    <div class="breadcrumbs__container base-container">
-      <a class="breadcrumbs__link base-link" href="index.html">Главная</a>
-      <a class="breadcrumbs__link base-link" href="catalogue_news.html"> — Новости</a>
-      <span class="breadcrumbs__current"> — Текущая новость</span>
-    </div>
-  </div>
+	<section class="newsCatalogue-item">
+		<div class="newsCatalogue-item__container base-container">
+			<h1 class="newsCatalogue-item__title base-title">Новости Ореха</h1>
+			<div class="newsCatalogue-item__body">
+				<div class="newsCatalogue-item__column">
+					<span class="newsCatalogue-item__date"></span>
+					<div class="newsCatalogue-item__text-block">
+						<h2></h2>
+						<p></p>
 
-  <section class="newsCatalogue-item">
-    <div class="newsCatalogue-item__container base-container">
-      <h1 class="newsCatalogue-item__title base-title">Новости Ореха</h1>
-      <div class="newsCatalogue-item__body">
-        <div class="newsCatalogue-item__column">
-          <span class="newsCatalogue-item__date"></span>
-          <div class="newsCatalogue-item__text-block">
-            <h2></h2>
-            <p></p>
+						<h3></h3>
+						<p></p>
 
-            <h3></h3>
-            <p></p>
+						<h3></h3>
+						<p></p>
+					</div>
+				</div>
+				<div class="newsCatalogue-item__column newsCatalogue-item__column--right">
+					<div class="newsCatalogue-item__slider swiper">
+						<div class="newsCatalogue-item__slider-wrapper swiper-wrapper"></div>
+					</div>
+				</div>
+			</div>
 
-            <h3></h3>
-            <p></p>
-          </div>
-        </div>
-        <div class="newsCatalogue-item__column newsCatalogue-item__column--right"></div>
-      </div>
-    </div>
-  </section>
+			@@include('components/bem-blocks/_similars.html', {
+			"main_title": "Похожие новости",
+			"main_more_link": "Все новости",
 
+			"img": "img/image/content/blog-img-1.png",
+			"date": "29 сентября 2022 - 17 октября 2020",
+			"source": "Четыре лапы",
+			"title": "Сухой корм Unocat и Royal Canin со скидкой -15%",
+			"text": "В зоосети Четыре Лапы можно приобрести корм для вашего питомца по выгодной цене со скидкой 15%",
+
+			"img_2": "img/image/content/blog-img-2.png",
+			"date_2": "29 сентября 2022 - 17 октября 2020",
+			"source_2": "Четыре лапы",
+			"title_2": "Копи пет-коины. Скидка на уютный дом до 30 %",
+			"text_2": "До конца ноября в зоосети Четыре Лапы копи и обменивай пет-койны на скидки до 30% на лежаки, домики и когтеточки",
+
+			"img_3": "img/image/content/blog-img-3.png",
+			"date_3": "29 сентября 2022 - 17 октября 2020",
+			"source_3": "COLIN`S",
+			"title_3": "Межсезонная распродажа в COLIN`S уже началась!",
+			"text_3": "Уютные модели этой осени уже ждут тебя со скидкой в наших магазинах и на colins.com. Не упусти шанс на выгодные покупки!",
+			})
+		</div>
+	</section>
 </main>
 
 @@include('components/base-blocks/_base-footer.html')
