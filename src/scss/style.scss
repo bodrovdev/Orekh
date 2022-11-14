@@ -20,6 +20,9 @@
 @use 'global/scaffolding';
 @use 'global/fonts';
 
+//Компоненты
+@use 'blocks/similars';
+
 //БЭМ блоки
 @use 'blocks/page-header';
 @use 'blocks/page-content';
@@ -36,6 +39,8 @@
 @use 'blocks/aboutPage-description';
 @use 'blocks/contactsPage-contacts';
 @use 'blocks/feedbackPage-tabs';
-@use 'blocks/schemePage-map';@use 'blocks/newsCatalogue-list';
+@use 'blocks/schemePage-map';
+@use 'blocks/newsCatalogue-list';
 @use 'blocks/newsCatalogue-item';
-@use 'blocks/similars';
+@use 'blocks/shopsCatalogue-list';
+@use 'blocks/shopsCatalogue-item';
