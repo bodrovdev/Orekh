@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="date=no">
+  <meta name="format-detection" content="address=no">
+  <meta name="format-detection" content="email=no">
+
+  <link href="css/style.min.css" rel="stylesheet">
+  <title>Орех - Магазины</title>
+</head>
+
+<body>
+  <header class="page-header">
+    <nav class="main-nav">
+      <div class="main-nav__top">
+        <div class="main-nav__top-container base-container">
+          <figure class="main-nav__logo-block base-figure">
+            <img class="main-nav__logo-img" src="img/image/design/logo.svg" width="89" height="44" alt="Логотип">
+          </figure>
+          <div class="main-nav__mobile-menu" id="mobile-menu">
+            <div class="main-nav__mobile-inner">
+              <ul class="main-nav__mobile-list main-nav__mobile-list--main base-list">
+                <li class="main-nav__mobile-item main-nav__mobile-item--main">
+                  <a class="main-nav__mobile-link main-nav__mobile-link--main base-link" href="index.html" data-name="index">Главная</a>
+                </li>
+                <li class="main-nav__mobile-item main-nav__mobile-item--main">
+                  <a class="main-nav__mobile-link main-nav__mobile-link--main base-link" href="about.html" data-name="about">О нас</a>
+                </li>
+                <li class="main-nav__mobile-item main-nav__mobile-item--main">
+                  <a class="main-nav__mobile-link main-nav__mobile-link--main base-link" href="contacts.html" data-name="contacts">Контакты</a>
+                </li>
+                <li class="main-nav__mobile-item main-nav__mobile-item--main">
+                  <a class="main-nav__mobile-link main-nav__mobile-link--main base-link" href="feedback.html" data-name="rent">Аренда и реклама</a>
+                </li>
+              </ul>
+
+              <ul class="main-nav__mobile-list main-nav__mobile-list--second base-list">
+                <li class="main-nav__mobile-item main-nav__mobile-item--second">
+                  <a class="main-nav__mobile-link main-nav__mobile-link--second base-link" href="scheme.html" data-name="scheme">Схема</a>
+                </li>
+                <li class="main-nav__mobile-item main-nav__mobile-item--second">
+                  <a class="main-nav__mobile-link main-nav__mobile-link--second base-link" href="catalogue_shops.html" data-name="shops">Магазины</a>
+                </li>
+                <li class="main-nav__mobile-item main-nav__mobile-item--second">
+                  <a class="main-nav__mobile-link main-nav__mobile-link--second base-link" href="catalogue_shops.html" data-name="joy">Развлечения</a>
+                </li>
+                <li class="main-nav__mobile-item main-nav__mobile-item--second">
+                  <a class="main-nav__mobile-link main-nav__mobile-link--second base-link" href="catalogue_shops.html" data-name="food">Еда</a>
+                </li>
+                <li class="main-nav__mobile-item main-nav__mobile-item--second">
+                  <a class="main-nav__mobile-link main-nav__mobile-link--second base-link" href="catalogue_news.html" data-name="news">Новости</a>
+                </li>
+              </ul>
+
+              <div class="main-nav__info-block">
+                <a class="main-nav__phone base-link" href="tel:79771245126">
+                  <svg class="main-nav__phone-icon" width="16" height="12" alt="">
+                    <use href="img/icon/sprite.svg#phone-icon"></use>
+                  </svg>
+                  <span class="main-nav__phone-text">7 (977)12-45-126</span>
+                </a>
+                <div class="main-nav__time">
+                  <svg class="main-nav__time-icon" width="16" height="15" alt="">
+                    <use href="img/icon/sprite.svg#time-icon"></use>
+                  </svg>
+                  <span class="main-nav__time-text">10:00 – 22:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="main-nav__burger base-button" id="burger">
+            <span class="main-nav__burger-dot"></span>
+            <span class="main-nav__burger-dot"></span>
+            <span class="main-nav__burger-dot"></span>
+            <span class="main-nav__burger-dot"></span>
+            <span class="main-nav__burger-dot"></span>
+            <span class="main-nav__burger-dot"></span>
+            <span class="main-nav__burger-dot"></span>
+            <span class="main-nav__burger-dot"></span>
+            <span class="main-nav__burger-dot"></span>
+          </button>
+        </div>
+      </div>
+      <div class="main-nav__bottom">
+        <div class="main-nav__bottom-container base-container">
+          <ul class="main-nav__bottom-list base-list">
+            <li class="main-nav__bottom-item">
+              <a class="main-nav__bottom-link base-link" href="scheme.html" data-name="scheme">Схема</a>
+            </li>
+            <li class="main-nav__bottom-item">
+              <a class="main-nav__bottom-link base-link" href="catalogue_shops.html" data-name="shops">Магазины</a>
+            </li>
+            <li class="main-nav__bottom-item">
+              <a class="main-nav__bottom-link base-link" href="catalogue_shops.html" data-name="joy">Развлечения</a>
+            </li>
+            <li class="main-nav__bottom-item">
+              <a class="main-nav__bottom-link base-link" href="catalogue_shops.html" data-name="food">Еда</a>
+            </li>
+            <li class="main-nav__bottom-item">
+              <a class="main-nav__bottom-link base-link" href="catalogue_news.html" data-name="news">Новости</a>
+            </li>
+          </ul>
+          <div class="main-nav__search-block">
+            <input class="main-nav__search-field" type="text" placeholder="Поиск..." id="search_field">
+            <button class="main-nav__search-button base-button" type="button" id="search_button">
+              <svg class="main-nav__search-icon" width="18" height="18" alt="">
+                <use href="img/icon/sprite.svg#search-icon"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+<main class="page-content" id="catalogue_news">
+  <div class="breadcrumbs">
+    <div class="breadcrumbs__container base-container">
+      <a class="breadcrumbs__link base-link" href="index.html">Главная</a>
+      <span class="breadcrumbs__current"> — Магазины</span>
+    </div>
+  </div>
+
+  <section class="shopsCatalogue-list">
+    <div class="shopsCatalogue-list__container base-container">
+      <div class="shopsCatalogue-list__topline">
+        <h1 class="shopsCatalogue-list__title base-title">Магазины</h1>
+        <div class="shopsCatalogue-list__search-block">
+          <input class="shopsCatalogue-list__search-input" type="text" id="shop_catalogue_search" name="shop_catalogue_search" placeholder="Название магазина">
+          <svg class="shopsCatalogue-list__search-icon" width="18" height="18" alt="#">
+            <use href="img/icon/sprite.svg#search-icon"></use>
+          </svg>
+        </div>
+      </div>
+
+      <div class="shopsCatalogue-list__items-wrapper">
+        <div class="shopsCatalogue-list__item">
+          <figure class="shopsCatalogue-list__item-image base-figure">
+            <img class="shopsCatalogue-list__item-img" src="img/image/content/shop-logo-1.png" alt="#">
+            <a class="shopsCatalogue-list__item-hover base-link" href="#">
+              <div class="shopsCatalogue-list__hover-topline">
+                <span class="shopsCatalogue-list__hover-name">Твоё</span>
+                <svg class="shopsCatalogue-list__hover-arrow" width="62" height="30" alt="#">
+                  <use href="img/icon/sprite.svg#shops-hover-arrow-icon"></use>
+                </svg>
+              </div>
+              <span class="shopsCatalogue-list__hover-floor">
+                <span class="shopsCatalogue-list__hover-number">2</span>
+                <span class="shopsCatalogue-list__hover-text">этаж</span>
+              </span>
+            </a>
+          </figure>
+          <div class="shopsCatalogue-list__item-bottom">
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-name">Твоё</span>
+              <span class="shopsCatalogue-list__bottom-category">Одежда</span>
+            </div>
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-floor">
+                <span class="shopsCatalogue-list__floor-number">2</span>
+                <span class="shopsCatalogue-list__floor-text">Этаж</span>
+              </span>
+              <a class="shopsCatalogue-list__bottom-link base-link" href="#">На схеме</a>
+            </div>
+          </div>
+        </div>
+        <div class="shopsCatalogue-list__item">
+          <figure class="shopsCatalogue-list__item-image base-figure">
+            <img class="shopsCatalogue-list__item-img" src="img/image/content/shop-logo-2.png" alt="#">
+            <a class="shopsCatalogue-list__item-hover base-link" href="#">
+              <div class="shopsCatalogue-list__hover-topline">
+                <span class="shopsCatalogue-list__hover-name">INCITY</span>
+                <svg class="shopsCatalogue-list__hover-arrow" width="62" height="30" alt="#">
+                  <use href="img/icon/sprite.svg#shops-hover-arrow-icon"></use>
+                </svg>
+              </div>
+              <span class="shopsCatalogue-list__hover-floor">
+                <span class="shopsCatalogue-list__hover-number">3</span>
+                <span class="shopsCatalogue-list__hover-text">этаж</span>
+              </span>
+            </a>
+          </figure>
+          <div class="shopsCatalogue-list__item-bottom">
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-name">INCITY</span>
+              <span class="shopsCatalogue-list__bottom-category">Одежда</span>
+            </div>
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-floor">
+                <span class="shopsCatalogue-list__floor-number">3</span>
+                <span class="shopsCatalogue-list__floor-text">Этаж</span>
+              </span>
+              <a class="shopsCatalogue-list__bottom-link base-link" href="#">На схеме</a>
+            </div>
+          </div>
+        </div>
+        <div class="shopsCatalogue-list__item">
+          <figure class="shopsCatalogue-list__item-image base-figure">
+            <img class="shopsCatalogue-list__item-img" src="img/image/content/shop-logo-3.png" alt="#">
+            <a class="shopsCatalogue-list__item-hover base-link" href="#">
+              <div class="shopsCatalogue-list__hover-topline">
+                <span class="shopsCatalogue-list__hover-name">FAMILIA</span>
+                <svg class="shopsCatalogue-list__hover-arrow" width="62" height="30" alt="#">
+                  <use href="img/icon/sprite.svg#shops-hover-arrow-icon"></use>
+                </svg>
+              </div>
+              <span class="shopsCatalogue-list__hover-floor">
+                <span class="shopsCatalogue-list__hover-number">4</span>
+                <span class="shopsCatalogue-list__hover-text">этаж</span>
+              </span>
+            </a>
+          </figure>
+          <div class="shopsCatalogue-list__item-bottom">
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-name">FAMILIA</span>
+              <span class="shopsCatalogue-list__bottom-category">Одежда</span>
+            </div>
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-floor">
+                <span class="shopsCatalogue-list__floor-number">4</span>
+                <span class="shopsCatalogue-list__floor-text">Этаж</span>
+              </span>
+              <a class="shopsCatalogue-list__bottom-link base-link" href="#">На схеме</a>
+            </div>
+          </div>
+        </div>
+        <div class="shopsCatalogue-list__item">
+          <figure class="shopsCatalogue-list__item-image base-figure">
+            <img class="shopsCatalogue-list__item-img" src="img/image/content/shop-logo-4.png" alt="#">
+            <a class="shopsCatalogue-list__item-hover base-link" href="#">
+              <div class="shopsCatalogue-list__hover-topline">
+                <span class="shopsCatalogue-list__hover-name">MILANA</span>
+                <svg class="shopsCatalogue-list__hover-arrow" width="62" height="30" alt="#">
+                  <use href="img/icon/sprite.svg#shops-hover-arrow-icon"></use>
+                </svg>
+              </div>
+              <span class="shopsCatalogue-list__hover-floor">
+                <span class="shopsCatalogue-list__hover-number">2</span>
+                <span class="shopsCatalogue-list__hover-text">этаж</span>
+              </span>
+            </a>
+          </figure>
+          <div class="shopsCatalogue-list__item-bottom">
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-name">MILANA</span>
+              <span class="shopsCatalogue-list__bottom-category">Одежда</span>
+            </div>
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-floor">
+                <span class="shopsCatalogue-list__floor-number">2</span>
+                <span class="shopsCatalogue-list__floor-text">Этаж</span>
+              </span>
+              <a class="shopsCatalogue-list__bottom-link base-link" href="#">На схеме</a>
+            </div>
+          </div>
+        </div>
+        <div class="shopsCatalogue-list__item">
+          <figure class="shopsCatalogue-list__item-image base-figure">
+            <img class="shopsCatalogue-list__item-img" src="img/image/content/shop-logo-5.png" alt="#">
+            <a class="shopsCatalogue-list__item-hover base-link" href="#">
+              <div class="shopsCatalogue-list__hover-topline">
+                <span class="shopsCatalogue-list__hover-name">RALF RINGER</span>
+                <svg class="shopsCatalogue-list__hover-arrow" width="62" height="30" alt="#">
+                  <use href="img/icon/sprite.svg#shops-hover-arrow-icon"></use>
+                </svg>
+              </div>
+              <span class="shopsCatalogue-list__hover-floor">
+                <span class="shopsCatalogue-list__hover-number">1</span>
+                <span class="shopsCatalogue-list__hover-text">этаж</span>
+              </span>
+            </a>
+          </figure>
+          <div class="shopsCatalogue-list__item-bottom">
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-name">RALF RINGER</span>
+              <span class="shopsCatalogue-list__bottom-category">Одежда</span>
+            </div>
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-floor">
+                <span class="shopsCatalogue-list__floor-number">1</span>
+                <span class="shopsCatalogue-list__floor-text">Этаж</span>
+              </span>
+              <a class="shopsCatalogue-list__bottom-link base-link" href="#">На схеме</a>
+            </div>
+          </div>
+        </div>
+        <div class="shopsCatalogue-list__item">
+          <figure class="shopsCatalogue-list__item-image base-figure">
+            <img class="shopsCatalogue-list__item-img" src="img/image/content/shop-logo-1.png" alt="#">
+            <a class="shopsCatalogue-list__item-hover base-link" href="#">
+              <div class="shopsCatalogue-list__hover-topline">
+                <span class="shopsCatalogue-list__hover-name">ALEF</span>
+                <svg class="shopsCatalogue-list__hover-arrow" width="62" height="30" alt="#">
+                  <use href="img/icon/sprite.svg#shops-hover-arrow-icon"></use>
+                </svg>
+              </div>
+              <span class="shopsCatalogue-list__hover-floor">
+                <span class="shopsCatalogue-list__hover-number">2</span>
+                <span class="shopsCatalogue-list__hover-text">этаж</span>
+              </span>
+            </a>
+          </figure>
+          <div class="shopsCatalogue-list__item-bottom">
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-name">ALEF</span>
+              <span class="shopsCatalogue-list__bottom-category">Одежда</span>
+            </div>
+            <div class="shopsCatalogue-list__bottom-item">
+              <span class="shopsCatalogue-list__bottom-floor">
+                <span class="shopsCatalogue-list__floor-number">2</span>
+                <span class="shopsCatalogue-list__floor-text">Этаж</span>
+              </span>
+              <a class="shopsCatalogue-list__bottom-link base-link" href="#">На схеме</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="shopsCatalogue-list__showmore main-button base-button" type="button">
+        <span class="main-button__text">Показать ещё</span>
+      </button>
+    </div>
+  </section>
+
+
+</main>
+
+<footer class="page-footer">
+  <div class="page-footer__container base-container">
+    <div class="page-footer__logo-block">
+      <figure class="page-footer__logo-image base-figure">
+        <img class="page-footer__logo-img" src="img/image/design/logo-footer.svg" width="126" height="62" alt="Логотип">
+      </figure>
+      <div class="page-footer__socials">
+        <h3 class="page-footer__socials-title base-title">Мы в социальных сетях</h3>
+        <ul class="page-footer__socials-list base-list">
+          <li class="page-footer__socials-item">
+            <a class="page-footer__socials-link base-link" href="#">
+              <svg class="page-footer__socials-icon" width="23" height="22" alt="">
+                <use href="img/icon/sprite.svg#socials-vk-icon"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <section class="footer-main">
+      <div class="footer-main__socials">
+        <h3 class="footer-main__socials-title base-title">Мы в социальных сетях</h3>
+        <ul class="footer-main__socials-list base-list">
+          <li class="footer-main__socials-item">
+            <a class="footer-main__socials-link base-link" href="#">
+              <svg class="footer-main__socials-icon" width="23" height="22" alt="">
+                <use href="img/icon/sprite.svg#socials-vk-icon"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-main__navigation">
+        <ul class="footer-main__nav-list base-list">
+          <li class="footer-main__nav-item">
+            <a class="footer-main__nav-link base-link" href="index.html">Главная</a>
+            <a class="footer-main__nav-link base-link" href="about.html">О нас</a>
+          </li>
+          <li class="footer-main__nav-item">
+            <a class="footer-main__nav-link base-link" href="scheme.html">Схема</a>
+            <a class="footer-main__nav-link base-link" href="catalogue_shops.html">Магазины</a>
+          </li>
+          <li class="footer-main__nav-item">
+            <a class="footer-main__nav-link base-link" href="catalogue_shops.html">Развлечения</a>
+            <a class="footer-main__nav-link base-link" href="catalogue_shops.html">Еда</a>
+          </li>
+          <li class="footer-main__nav-item">
+            <a class="footer-main__nav-link base-link" href="catalogue_news.html">Новости</a>
+            <a class="footer-main__nav-link base-link" href="contacts.html">Контакты</a>
+          </li>
+          <li class="footer-main__nav-item">
+            <a class="footer-main__nav-link base-link" href="feedback.html">Аренда и реклама</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="underline">
+      <span class="underline__copyright">© 2021. ТЦ Орех</span>
+      <a class="underline__policy-link base-link" href="#">Политика в отношении обработки персональных данных</a>
+      <a class="underline__madeby base-link" href="#">Создано в IS ART</a>
+    </section>
+  </div>
+</footer>
+
+<script src="js/index.min.js"></script>
+</body>
+
+</html>
