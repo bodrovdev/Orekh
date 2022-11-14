@@ -14,3 +14,13 @@ let news_slider = new Swiper(".newsCatalogue-item__slider", {
     swiper: news_slider_2,
   },
 });
+
+let shop_item_swiper = new Swiper(".shopsCatalogue-item__slider", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+
+  navigation: {
+    nextEl: ".shopsCatalogue-item__slider-arrow--next",
+    prevEl: ".shopsCatalogue-item__slider-arrow--prev",
+  },
+})

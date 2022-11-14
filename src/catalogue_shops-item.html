@@ -1,0 +1,84 @@
+@@include('components/base-blocks/_base-header.html', {
+"title": "Орех - Магазины",
+})
+<main class="page-content" id="catalogue_news">
+  <div class="breadcrumbs">
+    <div class="breadcrumbs__container base-container">
+      <a class="breadcrumbs__link base-link" href="index.html">Главная —</a>
+      <a class="breadcrumbs__link base-link" href="index.html">Еда —</a>
+      <span class="breadcrumbs__current">BURGER KING</span>
+    </div>
+  </div>
+
+  <section class="shopsCatalogue-item">
+    <div class="shopsCatalogue-item__container base-container">
+      <div class="shopsCatalogue-item__slider-block">
+        <div class="shopsCatalogue-item__slider swiper">
+          <div class="shopsCatalogue-item__slider-wrapper swiper-wrapper">
+            <div class="shopsCatalogue-item__slider-slide swiper-slide">
+              <img class="shopsCatalogue-item__slider-img" src="img/image/content/shop-item-1.png" alt="#">
+            </div>
+            <div class="shopsCatalogue-item__slider-slide swiper-slide">
+              <img class="shopsCatalogue-item__slider-img" src="img/image/content/shop-item-1.png" alt="#">
+            </div>
+            <div class="shopsCatalogue-item__slider-slide swiper-slide">
+              <img class="shopsCatalogue-item__slider-img" src="img/image/content/shop-item-1.png" alt="#">
+            </div>
+          </div>
+          <svg class="shopsCatalogue-item__slider-arrow shopsCatalogue-item__slider-arrow--prev" width="51" height="121" alt="#">
+            <use href="img/icon/sprite.svg#shops-item-slider-arrow-icon"></use>
+          </svg>
+          <svg class="shopsCatalogue-item__slider-arrow shopsCatalogue-item__slider-arrow--next" width="51" height="121" alt="#">
+            <use href="img/icon/sprite.svg#shops-item-slider-arrow-icon"></use>
+          </svg>
+        </div>
+      </div>
+      <div class="shopsCatalogue-item__main-block">
+        <h1 class="shopsCatalogue-item__title base-title">BURGER KING</h1>
+        <div class="shopsCatalogue-item__info">
+          <div class="shopsCatalogue-item__info-item">
+            <span class="shopsCatalogue-item__info-caption">Режим работы</span>
+            <span class="shopsCatalogue-item__info-text">Ежедневно с 10:00 – 22:00 </span>
+          </div>
+          <div class="shopsCatalogue-item__info-item">
+            <span class="shopsCatalogue-item__info-caption">Сайт</span>
+            <a class="shopsCatalogue-item__info-text base-link" href="#">burgerkingrus.ru</a>
+          </div>
+          <div class="shopsCatalogue-item__info-location">
+            <span class="shopsCatalogue-item__info-floor">
+              <span class="shopsCatalogue-item__floor-number">4</span> этаж
+            </span>
+          </div>
+          <a class="shopsCatalogue-item__info-link main-button base-link" href="#">
+            <span class="main-button__text">На схеме ТЦ</span>
+          </a>
+        </div>
+        <div class="shopsCatalogue-item__description"></div>
+      </div>
+      @@include('components/bem-blocks/_similars.html', {
+      "main_title": "Акции",
+      "main_more_link": "Все акции",
+
+      "img": "img/image/content/sales-img-1.png",
+      "date": "29 сентября 2022 - 17 октября 2020",
+      "source": "Burger king",
+      "title": "Закажи Лайки бокс и выиграй VIP встречу с Миланой",
+      "text": "После покупки Лайки Бокса тебе на почту придёт письмо с кодом — ты автоматически станешь участником розыгрыша. Специальный алгоритм случайным образом выберет 15 счастливчиков, которые получат приглашение на встречу.",
+
+      "img_2": "img/image/content/sales-img-2.png",
+      "date_2": "29 сентября 2022 - 17 октября 2020",
+      "source_2": "Burger king",
+      "title_2": "Новый вкус! Капучино и пряная тыква. Вкус сезона!",
+      "text_2": "Секретный ингредиент от феи-крёстной: аромат сладкой тыквы, пряностей и специй преобразит любимый напиток, как по волшебству.",
+
+      "img_3": "img/image/content/sales-img-3.png",
+      "date_3": "29 сентября 2022 - 17 октября 2020",
+      "source_3": "Burger king",
+      "title_3": "Воппер Джуниор, наггетсы и другие наши хиты",
+      "text_3": "Целое меню хитов по 99,99: обалденный Воппер Джуниор, шесть хрустящих Наггетсов, сырные медальоны и клёвый Цезарь Кинг. Подробнее в Правилах акции.",
+      })
+    </div>
+  </section>
+
+</main>
+@@include('components/base-blocks/_base-footer.html')

@@ -1,0 +1,26 @@
+@use "../mixins";
+
+.shopsCatalogue-item {
+  &__slider {
+    position: relative;
+
+    z-index: 1;
+  }
+
+  &__slider-arrow {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 10;
+
+    &--prev {
+      left: 0;
+    }
+
+    &--nex {
+      right: 0;
+    }
+  }
+}
