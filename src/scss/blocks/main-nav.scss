@@ -564,7 +564,22 @@
     color: var(--color-shark);
 
     padding: 10px 60px 10px 15px;
+
+    @include mixins.respond-to(mobileOnly) {
+      width: 100px;
+    }
+
+    @include mixins.respond-to(tabletOnly) {
+      width: 180px;
+    }
   }
+
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1279px) {
+    &__search-field {
+      width: 400px;
+    }
+  }
+
 
   &__search-button {
     position: absolute;
