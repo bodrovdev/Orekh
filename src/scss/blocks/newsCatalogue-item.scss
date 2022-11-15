@@ -2,6 +2,19 @@
 
 .newsCatalogue-item {
 
+  background-image: -webkit-image-set(url("../img/image/design/news-item-cover.jpg") 1x,
+      url("../img/image/design/news-item-cover@2x.jpg") 2x);
+
+  @supports (background: -webkit-image-set(url("../img/image/design/news-item-cover.webp") 1x,
+      url("../img/image/design/news-item-cover@2x.webp") 2x)) {
+    background-image: -webkit-image-set(url("../img/image/design/news-item-cover.webp") 1x,
+        url("../img/image/design/news-item-cover@2x.webp") 2x);
+  }
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   &__title {
     font-weight: 700;
     font-size: 40px;

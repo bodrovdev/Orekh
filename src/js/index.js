@@ -246,3 +246,14 @@ window.addEventListener('load', () => {
     })
   }
 })
+
+//Открытие определённого таба при переходе по ссылке
+window.addEventListener('load', () => {
+  if (document.getElementById('tabs_scheme') === null) {
+    return;
+  }
+  else {
+    let tabs_buttons = document.querySelectorAll('.schemePage-map__tabs-button');
+    tabs_buttons[window.location.hash.split('#')[1] - 1].click();
+  }
+})
