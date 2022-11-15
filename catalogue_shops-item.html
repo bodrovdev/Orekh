@@ -141,12 +141,12 @@
               <img class="shopsCatalogue-item__slider-img" src="img/image/content/shop-item-1.png" alt="#">
             </div>
           </div>
-          <svg class="shopsCatalogue-item__slider-arrow shopsCatalogue-item__slider-arrow--prev" width="51" height="121" alt="#">
-            <use href="img/icon/sprite.svg#shops-item-slider-arrow-icon"></use>
-          </svg>
-          <svg class="shopsCatalogue-item__slider-arrow shopsCatalogue-item__slider-arrow--next" width="51" height="121" alt="#">
-            <use href="img/icon/sprite.svg#shops-item-slider-arrow-icon"></use>
-          </svg>
+          <button class="shopsCatalogue-item__slider-arrow shopsCatalogue-item__slider-arrow--prev base-button" type="button">
+            <img class="shopsCatalogue-item__arrow-icon" src="img/image/design/shop-item-slider-arrow.png" width="53" height="121" alt="#">
+          </button>
+          <button class="shopsCatalogue-item__slider-arrow shopsCatalogue-item__slider-arrow--next base-button" type="button">
+            <img class="shopsCatalogue-item__arrow-icon" src="img/image/design/shop-item-slider-arrow.png" width="53" height="121" alt="#" style="transform: scale(-1, 1)">
+          </button>
         </div>
       </div>
       <div class="shopsCatalogue-item__main-block">
@@ -162,16 +162,29 @@
           </div>
           <div class="shopsCatalogue-item__info-location">
             <span class="shopsCatalogue-item__info-floor">
-              <span class="shopsCatalogue-item__floor-number">4</span> этаж
+              <span class="shopsCatalogue-item__floor-number">4</span> Этаж
             </span>
+            <a class="shopsCatalogue-item__info-link main-button base-link" href="#">
+              <span class="main-button__text">На схеме ТЦ</span>
+            </a>
           </div>
-          <a class="shopsCatalogue-item__info-link main-button base-link" href="#">
-            <span class="main-button__text">На схеме ТЦ</span>
-          </a>
         </div>
-        <div class="shopsCatalogue-item__description"></div>
+        <div class="shopsCatalogue-item__description">
+          <div class="shopsCatalogue-item__description-text">
+            <p>
+              Ежедневно в рестораны БУРГЕР КИНГ во всем мире приходит более одиннадцати миллионов посетителей.
+              И неудивительно: ведь наши рестораны известны вкусом фирменных блюд и отличным соотношением цены и качества.
+              Основанный в 1954 году, БУРГЕР КИНГ занимает второе по величине место в мире среди сетей ресторанов быстрого питания, специализирующихся на гамбургерах.
+              Оригинальный бургер «Воппер», ставка на ингредиенты высшего качества, фирменные рецепты и комфорт для посещения всей семьей — вот то, что уже пятьдесят с лишним лет успешной работы является отличительной чертой нашего бренда.
+            </p>
+          </div>
+          <figure class="shopsCatalogue-item__description-image base-figure">
+            <img class="shopsCatalogue-item__description-img" src="img/image/content/shop-item-logo.png" alt="#">
+          </figure>
+        </div>
       </div>
-      <section class="similars">
+    </div>
+    <section class="similars">
 	<div class="similars__container base-container">
 		<div class="similars__topline">
 			<h1 class="similars__title base-title">Акции</h1>
@@ -210,7 +223,6 @@
 		</div>
 	</div>
 </section>
-    </div>
   </section>
 
 </main>
