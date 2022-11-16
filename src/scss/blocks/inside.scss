@@ -222,7 +222,7 @@
     line-height: 130%;
     color: var(--color-shark);
 
-    transition: color 0.1s;
+    // transition: color 0.1s;
 
     padding: 4px 0 0 0;
 
@@ -236,7 +236,8 @@
 
       width: 100%;
       height: 100%;
-      background: var(--color-flush-orange);
+      // background: var(--color-frangipani);
+      background: #E5C6A8;
 
       transform: translateX(-100%);
       transition: transform 0.3s;
@@ -245,10 +246,10 @@
     }
   }
 
-  &__floor-link:hover .inside__floor-text {
-    color: var(--color-white);
-    transition: color 0.1s;
-  }
+  // &__floor-link:hover .inside__floor-text {
+  //   color: var(--color-white);
+  //   transition: color 0.1s;
+  // }
 
   &__floor-link:hover .inside__floor-text::before {
     transform: translateX(0);
