@@ -86,6 +86,19 @@ window.addEventListener('load', () => {
         form1_select_options.classList.remove('feedbackPage-tabs__select-options--active');
         form1_select.classList.remove('feedbackPage-tabs__select--active');
       })
+
+      child.addEventListener('keypress', function (event) {
+        if (document.activeElement === child && (event.key === "Enter" || event.key === "Space")) {
+          event.preventDefault();
+
+          form1_select_text.textContent = child.dataset.value;
+          form1_select_input.value = child.dataset.value;
+          console.log(form1_select_input.value);
+
+          form1_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+          form1_select.classList.remove('feedbackPage-tabs__select--active');
+        }
+      })
     })
 
     document.addEventListener('click', (event) => {
@@ -134,6 +147,19 @@ window.addEventListener('load', () => {
 
         form2_select_options.classList.remove('feedbackPage-tabs__select-options--active');
         form2_select.classList.remove('feedbackPage-tabs__select--active');
+      })
+
+      child.addEventListener('keypress', function (event) {
+        if (document.activeElement === child && (event.key === "Enter" || event.key === "Space")) {
+          event.preventDefault();
+
+          form2_select_text.textContent = child.dataset.value;
+          form2_select_input.value = child.dataset.value;
+          console.log(form2_select_input.value);
+
+          form2_select_options.classList.remove('feedbackPage-tabs__select-options--active');
+          form2_select.classList.remove('feedbackPage-tabs__select--active');
+        }
       })
     })
 

@@ -10,13 +10,13 @@
     justify-content: space-between;
     flex-wrap: wrap;
 
+    padding: 10px 0 0 0;
+
     @include mixins.respond-to(mobileOnly) {
       width: 100%;
 
       justify-content: flex-start;
     }
-
-    overflow: hidden;
   }
 
   &__title {
@@ -49,6 +49,8 @@
     border-radius: 50%;
     cursor: pointer;
     user-select: none;
+
+    transition: outline 0.1s, outline-offset 0.1s;
 
     margin: 0 17px 0 0;
 
@@ -121,6 +123,13 @@
     border-radius: 50%;
 
     transition: transform 0.3s;
+  }
+
+  &__tabs-input:focus-visible+label {
+    outline: 2px solid var(--color-flush-orange);
+    outline-offset: 5px;
+
+    transition: outline 0.1s, outline-offset 0.1s;
   }
 
   &__fly {
@@ -403,6 +412,11 @@
     display: block;
   }
 
+  &__item--path {
+    border: none;
+    outline: none;
+  }
+
   &__item--path:hover path {
     filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
 
@@ -411,11 +425,24 @@
     }
   }
 
+  &__item--path:focus-visible path {
+    filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
+  }
+
+  &__item--rect {
+    border: none;
+    outline: none;
+  }
+
   &__item--rect:hover rect {
     filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
 
     @include mixins.respond-to(tablet) {
       cursor: pointer;
     }
+  }
+
+  &__item--rect:focus-visible rect {
+    filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
   }
 }

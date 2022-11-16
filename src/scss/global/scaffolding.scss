@@ -39,6 +39,24 @@ body {
 		font-size: 14px;
 		line-height: 18px;
 		color: var(--color-boulder);
+
+		transition: opacity 0.1s, color 0.3s, border-radius 0.1s, outline 0.1s, outline-offset 0.1s;
+
+		&:hover {
+			opacity: 1;
+
+			color: var(--color-flush-orange);
+
+			transition: color 0.3s;
+		}
+
+		&:focus-visible {
+			opacity: 1;
+			border-radius: 15px;
+
+			outline: 2px solid var(--color-flush-orange);
+			outline-offset: 3px;
+		}
 	}
 
 	&__current {
