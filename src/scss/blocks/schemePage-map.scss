@@ -415,14 +415,14 @@
   &__item--path {
     border: none;
     outline: none;
-  }
-
-  &__item--path:hover path {
-    filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
 
     @include mixins.respond-to(tablet) {
       cursor: pointer;
     }
+  }
+
+  &__item--path:hover path {
+    filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
   }
 
   &__item--path:focus-visible path {
@@ -432,17 +432,27 @@
   &__item--rect {
     border: none;
     outline: none;
-  }
-
-  &__item--rect:hover rect {
-    filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
 
     @include mixins.respond-to(tablet) {
       cursor: pointer;
     }
   }
 
+  &__item--rect:hover rect {
+    filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
+  }
+
   &__item--rect:focus-visible rect {
     filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
+  }
+
+  &__item--active {
+    & rect {
+      filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
+    }
+
+    & path {
+      filter: invert(30%) sepia(7%) saturate(4585%) hue-rotate(339deg) brightness(100%) contrast(81%);
+    }
   }
 }

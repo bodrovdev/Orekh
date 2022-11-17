@@ -192,7 +192,7 @@ window.addEventListener('load', () => {
   }
 })
 
-//Получение информации о магазине и её отображение в появляющемся блоке с данными
+//Получение информации о магазине и её отображение в следящем блоке с данными
 let map_items = document.querySelectorAll('.schemePage-map__item');
 let flying_div_shopname = document.getElementById('fly_shopname');
 let flying_div_workstart = document.getElementById('fly_workstart');
@@ -234,6 +234,7 @@ map_items.forEach((child) => {
 let tabs_modal = document.getElementById('tabs_modal');
 let tabs_modal_close = document.getElementById('tabs_modal_close');
 let tabs_modal_name = document.getElementById('tabs_modal_name');
+let tabs_modal_link = document.getElementById('tabs_modal_link');
 let tabs_modal_workstart = document.getElementById('tabs_modal_workstart');
 let tabs_modal_workend = document.getElementById('tabs_modal_workend');
 let tabs_modal_isopen = document.getElementById('tabs_modal_isopen');
@@ -242,6 +243,7 @@ map_items.forEach((child) => {
   child.addEventListener('click', () => {
     tabs_modal.classList.add('schemePage-map__tabs-modal--active');
     tabs_modal_name.textContent = child.dataset.name;
+    tabs_modal_link.href = child.dataset.link;
     tabs_modal_workstart.textContent = child.dataset.open;
     tabs_modal_workend.textContent = child.dataset.close;
 
@@ -258,7 +260,6 @@ map_items.forEach((child) => {
     else {
       tabs_modal_isopen.textContent = 'Закрыто';
     }
-
   })
 })
 
@@ -273,13 +274,40 @@ window.addEventListener('load', () => {
   }
 })
 
-//Открытие определённого таба при переходе по ссылке
+//Открытие определённого таба с картой при переходе по ссылке на странице scheme
+window.addEventListener('load', () => {
+  if (document.getElementById('tabs_scheme') === null) {
+    return;
+  }
+  else {
+    let tabs_index = [1, 2, 3, 4, 5];
+    let tabs_buttons = document.querySelectorAll('.schemePage-map__tabs-button');
+
+    if (window.location.hash !== '' && tabs_index.includes(window.location.hash)) {
+      tabs_buttons[window.location.hash.split('#')[1] - 1].click();
+    }
+  }
+})
+
+//Подсвечивание (и отображение информации на мобильной версии) магазина на странице scheme при переходе по ссылке со страницы магазина 
 window.addEventListener('load', () => {
   if (document.getElementById('tabs_scheme') === null) {
     return;
   }
   else {
     let tabs_buttons = document.querySelectorAll('.schemePage-map__tabs-button');
-    tabs_buttons[window.location.hash.split('#')[1] - 1].click();
+
+    map_items.forEach((item) => {
+      if (item.dataset.name === window.location.hash.split('#')[1]) {
+        (tabs_buttons[item.dataset.floor - 1]).click();
+        item.scrollIntoView({
+          behavior: 'auto',
+          block: 'center',
+          inline: 'center'
+        });
+        item.classList.add('schemePage-map__item--active');
+      }
+    })
   }
 })
+

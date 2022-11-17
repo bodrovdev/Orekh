@@ -158,7 +158,7 @@
 
         width: 90%;
         height: 1px;
-        background-color: var(--color-shark);
+        background-color: var(--color-boulder);
         opacity: 0.5;
       }
     }
@@ -185,7 +185,7 @@
 
         width: 90%;
         height: 1px;
-        background-color: var(--color-shark);
+        background-color: var(--color-boulder);
         opacity: 0.5;
       }
     }
@@ -297,6 +297,10 @@
       width: 100%;
       height: 2px;
       background: var(--gradient-main);
+
+      @include mixins.respond-to(mobileOnly) {
+        opacity: 0;
+      }
     }
   }
 
@@ -349,6 +353,10 @@
       width: 100%;
       height: 2px;
       background: var(--gradient-main);
+
+      @include mixins.respond-to(mobileOnly) {
+        opacity: 0;
+      }
     }
   }
 
