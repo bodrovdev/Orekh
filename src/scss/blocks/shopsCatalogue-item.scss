@@ -55,7 +55,27 @@
   }
 
   &__slider-arrow {
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    transform: border-radius 0.1s, box-shadow 0.1s;
+
     z-index: 10;
+
+    &:hover {
+      border-radius: 15px;
+      box-shadow: 0 0 0 3px var(--color-flush-orange);
+
+      transform: border-radius 0.1s, box-shadow 0.1s;
+    }
+
+    &:focus-visible {
+      border-radius: 15px;
+      box-shadow: 0 0 0 3px var(--color-flush-orange);
+
+      transform: border-radius 0.1s, box-shadow 0.1s;
+    }
   }
 
   &__slider-arrow--prev {
@@ -169,6 +189,24 @@
 
     @include mixins.respond-to(mobileOnly) {
       font-size: 18px;
+    }
+  }
+
+  &__info-link {
+    transition: color 0.3s, border-radius 0.1s, outline 0.1s, outline-offset 0.1s;
+
+    &:hover {
+      color: var(--color-flush-orange);
+
+      transition: color 0.3s;
+    }
+
+    &:focus-visible {
+      border-radius: 15px;
+      outline: 2px solid var(--color-flush-orange);
+      outline-offset: 5px;
+
+      transition: border-radius 0.1s, outline 0.1s, outline-offset 0.1s;
     }
   }
 

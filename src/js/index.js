@@ -41,10 +41,10 @@ nav_links.forEach((element) => {
 function currentPage() {
   let page_id = document.querySelector('.page-content').id;
 
-  let nav_links = document.querySelectorAll('.main-nav__mobile-link');
+  let nav_links = document.querySelectorAll('.main-nav__target-link');
   nav_links.forEach((child) => {
     if (child.dataset.name === page_id) {
-      child.classList.add('main-nav__mobile-link--active');
+      child.classList.add('main-nav__target-link--active');
     }
   })
 }

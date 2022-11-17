@@ -198,10 +198,23 @@
 
   &__thumb-slider .newsCatalogue-item__slider-slide {
     opacity: 0.4;
+    cursor: pointer;
+
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+
+      transition: opacity 0.3s;
+    }
   }
 
   &__thumb-slider .swiper-slide-thumb-active {
     opacity: 1;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &__thumb-slider .newsCatalogue-item__slider-img {

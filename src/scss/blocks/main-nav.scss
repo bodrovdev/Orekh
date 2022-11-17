@@ -245,12 +245,14 @@
   }
 
   &__mobile-link--main {
+    position: relative;
+
+    display: inline-block;
+
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
     color: var(--color-boulder);
-
-    transition: background 0.3s, -webkit-background-clip 0.3s, -webkit-text-fill-color 0.3s;
 
     @include mixins.respond-to(mobileOnly) {
       font-size: 20px;
@@ -259,7 +261,50 @@
     }
   }
 
+  &__mobile-list--main .main-nav__target-link--active {
+    font-weight: 700;
+
+    background: var(--gradient-main);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    @include mixins.respond-to(mobileOnly) {
+      background: var(--color-white);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -20px;
+
+        width: 10px;
+        height: 10px;
+        background-color: var(--color-white);
+        border-radius: 50%;
+
+        transform: translateY(-50%);
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -17px;
+
+      width: 100%;
+      height: 2px;
+      background: var(--gradient-main);
+    }
+  }
+
   &__mobile-link--second {
+    position: relative;
+
+    display: inline-block;
+
     @include mixins.respond-to(mobileOnly) {
       font-size: 17px;
       line-height: 130%;
@@ -268,61 +313,42 @@
     }
   }
 
-  &__mobile-link--active {
-    position: relative;
-
+  &__mobile-list--second .main-nav__target-link--active {
     font-weight: 700;
-    font-size: 12px;
-    line-height: 15px;
 
     background: var(--gradient-main);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
-    transition: all 0.3s;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      left: 0;
-
-      width: 100%;
-      height: 3px;
-      background-color: var(--color-nutmeg);
-      border-radius: 10px;
-
-      transition: all 0.3s;
-
-      z-index: 10;
-    }
 
     @include mixins.respond-to(mobileOnly) {
       background: var(--color-white);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
 
-      font-family: var(--font-family-default);
-      font-size: 20px;
-      font-weight: 600;
-      line-height: 130%;
-
       &::before {
         content: "";
         position: absolute;
         top: 50%;
-        transform: translateY(-50%);
-        left: -15px;
+        left: -20px;
 
-        width: 5px;
-        height: 5px;
+        width: 10px;
+        height: 10px;
         background-color: var(--color-white);
         border-radius: 50%;
-      }
 
-      &::after {
-        display: none;
+        transform: translateY(-50%);
       }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -17px;
+
+      width: 100%;
+      height: 2px;
+      background: var(--gradient-main);
     }
   }
 
@@ -510,13 +536,14 @@
       content: "";
       position: absolute;
       bottom: 0;
-      left: -100%;
+      left: 0;
 
       width: 100%;
       height: 2px;
       background-color: var(--color-fiery-orange);
 
-      transition: left 0.3s;
+      transform: translateX(-101%);
+      transition: transform 0.3s;
     }
 
     &:hover {
@@ -526,9 +553,8 @@
     }
 
     &:hover::after {
-      left: 0;
-
-      transition: all 0.3s;
+      transform: translateX(0);
+      transition: transform 0.3s;
     }
 
     &:focus-visible {
@@ -542,6 +568,13 @@
 
         transition: outline, outline-offset 0.1s;
       }
+    }
+  }
+
+  &__bottom-list .main-nav__target-link--active {
+    &::after {
+      transform: translateX(0);
+      transition: transform 0.3s;
     }
   }
 

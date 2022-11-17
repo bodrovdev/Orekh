@@ -117,6 +117,23 @@
     margin: 0 0 30px 0;
   }
 
+  &__item-link {
+    border: none;
+    outline: none;
+
+    &:hover .newsCatalogue-list__item-title {
+      color: var(--color-flush-orange);
+
+      transition: color 0.3s;
+    }
+
+    &:focus-visible .newsCatalogue-list__item-title {
+      color: var(--color-flush-orange);
+
+      transition: color 0.3s;
+    }
+  }
+
   &__item-title {
     font-weight: 500;
     font-size: 24px;
@@ -126,13 +143,6 @@
     transition: color 0.3s;
 
     margin: 0 0 15px 0;
-  }
-
-
-  &__item-link:hover .newsCatalogue-list__item-title {
-    color: var(--color-flush-orange);
-
-    transition: color 0.3s;
   }
 
   &__item-text {
