@@ -172,6 +172,8 @@ window.addEventListener('load', () => {
         form2_select.classList.remove('feedbackPage-tabs__select--active');
       }
     })
+
+
   }
 })
 
@@ -289,7 +291,7 @@ window.addEventListener('load', () => {
   }
 })
 
-//Подсвечивание (и отображение информации на мобильной версии) магазина на странице scheme при переходе по ссылке со страницы магазина 
+//Подсвечивание магазина на схеме на странице scheme при переходе по ссылке со страницы магазина 
 window.addEventListener('load', () => {
   if (document.getElementById('tabs_scheme') === null) {
     return;
@@ -310,4 +312,44 @@ window.addEventListener('load', () => {
     })
   }
 })
+
+//Отображение модального окна с подтверждением отправки формы
+window.addEventListener('load', () => {
+  if (document.getElementById('form1_select') === null) {
+    return;
+  }
+  else {
+    let form1 = document.getElementById('form1');
+    let form2 = document.getElementById('form2');
+    let modal = document.getElementById('modal');
+    let modal_close = document.getElementById('modal_close');
+
+    form1.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modal.classList.add('feedbackPage-tabs__modal--active');
+      disableBodyScroll(modal);
+    })
+
+    form2.addEventListener('submit', (e) => {
+      e.preventDefault();
+      modal.classList.add('feedbackPage-tabs__modal--active');
+      disableBodyScroll(modal);
+    })
+
+    modal_close.addEventListener('click', () => {
+      modal.classList.remove('feedbackPage-tabs__modal--active');
+      enableBodyScroll(modal);
+    })
+
+    modal.addEventListener('click', (e) => {
+      if (e.target !== e.currentTarget) {
+        return;
+      }
+      else {
+        modal.classList.remove('feedbackPage-tabs__modal--active');
+        enableBodyScroll(modal);
+      }
+    })
+  }
+});
 

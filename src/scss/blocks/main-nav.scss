@@ -44,7 +44,19 @@
   }
 
   &__logo-block {
+    display: inline-block;
+
+    transition: border-radius 0.1s, outline 0.1s, outline-offset 0.1s;
+
     z-index: 11;
+
+    &:focus-visible {
+      border-radius: 15px;
+      outline: 2px solid var(--color-flush-orange);
+      outline-offset: 5px;
+
+      transition: border-radius 0.1s, outline 0.1s, outline-offset 0.1s;
+    }
 
     @include mixins.respond-to(mobileOnly) {
       margin: 0;
@@ -550,7 +562,7 @@
       height: 2px;
       background-color: var(--color-fiery-orange);
 
-      transform: translateX(-101%);
+      transform: translateX(-102%);
       transition: transform 0.3s;
     }
 
