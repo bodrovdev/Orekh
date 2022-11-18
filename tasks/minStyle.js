@@ -23,17 +23,18 @@ module.exports = function minStyle(browserSync) {
 		.pipe(scss({ outputStyle: 'compressed' }))
 		// .pipe(scss())
 		.pipe(postcss(plugins))
-		.pipe(clean({ 
+		.pipe(clean({
 			// format: 'beautify',
 			level: {
-			1: {
-				all: true,
-				normalizeUrls: false
-			},
-			2: {
-				restructureRules: true
+				1: {
+					all: true,
+					normalizeUrls: false
+				},
+				2: {
+					restructureRules: true
+				}
 			}
-		} }))
+		}))
 		.pipe(concat('style.min.css'))
 		.pipe(dest('build/css/'))
 		.pipe(browserSync.stream())
