@@ -38,18 +38,16 @@ nav_links.forEach((element) => {
 })
 
 //Активное состояние пункта навигации текущей страницы
-function currentPage() {
+window.addEventListener('load', () => {
   let page_id = document.querySelector('.page-content').id;
-
   let nav_links = document.querySelectorAll('.main-nav__target-link');
+
   nav_links.forEach((child) => {
     if (child.dataset.name === page_id) {
       child.classList.add('main-nav__target-link--active');
     }
   })
-}
-
-currentPage();
+})
 
 //Выпадающее меню с выбором категории на странице feedback
 window.addEventListener('load', () => {
@@ -208,7 +206,7 @@ map_items.forEach((child) => {
 
   child.addEventListener('mouseenter', (e) => {
     flying_div.classList.add('schemePage-map__fly--active');
-    flying_div_shopname.textContent = e.target.dataset.name;
+    flying_div_shopname.textContent = e.target.dataset.shopname;
     flying_div_workstart.textContent = e.target.dataset.open;
     flying_div_workend.textContent = e.target.dataset.close;
 
@@ -244,7 +242,7 @@ let tabs_modal_isopen = document.getElementById('tabs_modal_isopen');
 map_items.forEach((child) => {
   child.addEventListener('click', () => {
     tabs_modal.classList.add('schemePage-map__tabs-modal--active');
-    tabs_modal_name.textContent = child.dataset.name;
+    tabs_modal_name.textContent = child.dataset.shopname;
     tabs_modal_link.href = child.dataset.link;
     tabs_modal_workstart.textContent = child.dataset.open;
     tabs_modal_workend.textContent = child.dataset.close;
@@ -276,7 +274,7 @@ window.addEventListener('load', () => {
   }
 })
 
-//Открытие определённого таба с картой при переходе по ссылке на странице scheme
+//Показ определённого этажа на карте на странице scheme при переходе по ссылке на странице с главной страницы
 window.addEventListener('load', () => {
   if (document.getElementById('tabs_scheme') === null) {
     return;
@@ -285,7 +283,7 @@ window.addEventListener('load', () => {
     let tabs_index = [1, 2, 3, 4, 5];
     let tabs_buttons = document.querySelectorAll('.schemePage-map__tabs-button');
 
-    if (window.location.hash !== '' && tabs_index.includes(window.location.hash)) {
+    if (window.location.hash !== '' && tabs_index.includes(Number(window.location.hash.split('#')[1]))) {
       tabs_buttons[window.location.hash.split('#')[1] - 1].click();
     }
   }
@@ -300,7 +298,7 @@ window.addEventListener('load', () => {
     let tabs_buttons = document.querySelectorAll('.schemePage-map__tabs-button');
 
     map_items.forEach((item) => {
-      if (item.dataset.name === window.location.hash.split('#')[1]) {
+      if (item.dataset.shopname === window.location.hash.split('#')[1]) {
         (tabs_buttons[item.dataset.floor - 1]).click();
         item.scrollIntoView({
           behavior: 'auto',
@@ -352,4 +350,5 @@ window.addEventListener('load', () => {
     })
   }
 });
+
 
